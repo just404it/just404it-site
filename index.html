@@ -6,6 +6,15 @@
   <title>JUST404IT - James Earl Cox III</title>
   <meta name="description" content="Games, films, writing, and experiments by James Earl Cox III, including the complete 100 Games in 5 Years archive.">
   <meta name="theme-color" content="#0e0f0f">
+  <link rel="canonical" href="https://just404it.github.io/just404it-site/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="JUST404IT - James Earl Cox III">
+  <meta property="og:description" content="Games, films, writing, and experiments by James Earl Cox III, including the complete 100 Games in 5 Years archive.">
+  <meta property="og:url" content="https://just404it.github.io/just404it-site/">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://just404it.github.io/just404it-site/#website", "url": "https://just404it.github.io/just404it-site/", "name": "JUST404IT", "description": "Games, films, writing, and experiments by James Earl Cox III, including the complete 100 Games in 5 Years archive.", "creator": {"@id": "https://just404it.github.io/just404it-site/#james-earl-cox-iii"}}, {"@type": "Person", "@id": "https://just404it.github.io/just404it-site/#james-earl-cox-iii", "name": "James Earl Cox III", "url": "https://just404it.github.io/just404it-site/"}]}</script>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
   <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
@@ -105,9 +114,21 @@
           <h2 id="archive-title">100 Games in 5 Years</h2>
           <p class="section-note">Every game is represented. Two project pages contain multi-game sets.</p>
         </div>
-        <p class="count" id="result-summary"><span id="visible-count">0</span> project pages</p>
+        <div class="archive-heading-side">
+          <p class="count" id="result-summary" role="status" aria-live="polite" aria-atomic="true"><span id="visible-count">0</span> project pages</p>
+          <a class="text-index-link" href="archive/">Complete text index</a>
+        </div>
       </div>
       <div class="archive-tools">
+        <div class="quick-routes" aria-label="Quick routes">
+          <span>Pick a door</span>
+          <button type="button" data-preset="play-now">Play something now</button>
+          <button type="button" data-preset="nonsense">Give me nonsense</button>
+          <button type="button" data-preset="serious">Get serious</button>
+          <button type="button" data-preset="off-screen">Go off-screen</button>
+          <button type="button" data-preset="made-fast">Made in a day</button>
+          <button type="button" data-preset="decorated">The decorated ones</button>
+        </div>
         <div class="archive-utility" role="search">
           <label class="control search-control" for="search"><span>Search</span><input id="search" type="search" placeholder="Title, credit, category, award"></label>
           <label class="control" for="sort"><span>Sort</span><select id="sort">
@@ -116,8 +137,11 @@
             <option value="newest">Year: newest first</option>
             <option value="oldest">Year: oldest first</option>
             <option value="title">Title: A to Z</option>
+            <option value="fastest">Build time: fastest first</option>
+            <option value="longest">Build time: longest first</option>
           </select></label>
           <label class="control" for="year"><span>Year</span><select id="year"><option value="all">All years</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option></select></label>
+          <button class="surprise-button" id="surprise-me" type="button">Surprise me</button>
           <button class="reset-button" id="reset-filters" type="button">Reset</button>
         </div>
         <div class="facet-groups" aria-label="Archive filters">
@@ -130,8 +154,21 @@
           <fieldset class="facet-group"><legend>Context</legend><div><button class="facet" type="button" data-group="contexts" data-value="jam" aria-pressed="false">Jam<span>30</span></button><button class="facet" type="button" data-group="contexts" data-value="personal" aria-pressed="false">Personal<span>7</span></button><button class="facet" type="button" data-group="contexts" data-value="serious" aria-pressed="false">Serious<span>22</span></button><button class="facet" type="button" data-group="contexts" data-value="silly" aria-pressed="false">Silly<span>54</span></button><button class="facet" type="button" data-group="contexts" data-value="interactive-fiction" aria-pressed="false">Interactive Fiction<span>5</span></button><button class="facet" type="button" data-group="contexts" data-value="music" aria-pressed="false">Music Videogames<span>6</span></button></div></fieldset>
           <fieldset class="facet-group"><legend>Platform</legend><div><button class="facet" type="button" data-group="platforms" data-value="web" aria-pressed="false">Online<span>46</span></button><button class="facet" type="button" data-group="platforms" data-value="pc" aria-pressed="false">PC<span>68</span></button><button class="facet" type="button" data-group="platforms" data-value="mac" aria-pressed="false">Mac<span>4</span></button></div></fieldset>
         </div>
+        <details class="more-filters">
+          <summary>More ways in</summary>
+          <div class="facet-groups facet-groups-more">
+            <fieldset class="facet-group"><legend>Recognition</legend><div><button class="facet" type="button" data-group="recognition" data-value="award-winning" aria-pressed="false">Award Winning<span>8</span></button><button class="facet" type="button" data-group="recognition" data-value="exhibited" aria-pressed="false">Exhibited<span>18</span></button></div></fieldset>
+            <fieldset class="facet-group"><legend>Do something</legend><div><button class="facet" type="button" data-group="access" data-value="online" aria-pressed="false">Play online<span>46</span></button><button class="facet" type="button" data-group="access" data-value="download" aria-pressed="false">Download<span>20</span></button><button class="facet" type="button" data-group="access" data-value="watch" aria-pressed="false">Watch<span>61</span></button><button class="facet" type="button" data-group="access" data-value="rules" aria-pressed="false">Rules / print<span>10</span></button></div></fieldset>
+            <fieldset class="facet-group"><legend>Build time</legend><div><button class="facet" type="button" data-group="pace" data-value="day-or-less" aria-pressed="false">One day or less<span>20</span></button><button class="facet" type="button" data-group="pace" data-value="days" aria-pressed="false">Days<span>20</span></button><button class="facet" type="button" data-group="pace" data-value="weeks" aria-pressed="false">Weeks<span>20</span></button><button class="facet" type="button" data-group="pace" data-value="months-plus" aria-pressed="false">Months+<span>23</span></button></div></fieldset>
+          </div>
+        </details>
+        <div class="active-filters" id="active-filters" hidden>
+          <span>Active</span>
+          <div id="active-filter-list"></div>
+        </div>
       </div>
-      <div class="portfolio-grid" id="portfolio-grid" aria-live="polite"></div>
+      <div class="portfolio-grid" id="portfolio-grid"></div>
+      <noscript><p class="noscript-index">JavaScript is off. The <a href="archive/">complete text index</a> still has every project.</p></noscript>
     </section>
 
     <section class="band elsewhere" id="elsewhere" aria-labelledby="elsewhere-title">

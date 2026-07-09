@@ -36,13 +36,31 @@ The old site placed unrelated labels in one category list. The rebuild separates
 - **Format:** digital, analog, or intermedia.
 - **Context:** jam, personal, serious, silly, interactive fiction, or music videogame.
 - **Platform:** web, PC, or Mac.
+- **Recognition:** award-winning or exhibited.
+- **Do something:** play online, download, watch, or get rules/print material.
+- **Build time:** one day or less, days, weeks, or months and longer.
 - **Year:** 2012 through 2017.
 
 Status is exclusive. Choosing another status replaces the current status.
 
-Format, context, and platform are multi-select groups. Multiple labels inside one group broaden the result with OR logic. Different groups narrow the result with AND logic. Search and year also combine with the active filters using AND logic.
+All groups except status are multi-select. Multiple labels inside one group broaden the result with OR logic. Different groups narrow the result with AND logic. Search and year also combine with the active filters using AND logic.
 
-Example: `Playable` + (`Analog` OR `Intermedia`) + `Exhibited` is not currently possible because `Exhibited` is represented by the broader recognized status. A future public-data pass may split awards and exhibitions if the source data is normalized enough to support that distinction consistently.
+Example: `Playable` + (`Analog` OR `Intermedia`) + `Exhibited` finds playable off-screen or hybrid work that was publicly exhibited.
+
+Facet counts respond to the filters in other groups. A zero-result option is disabled unless it is already selected. Active filters appear as individually removable chips, and the full state remains in the URL.
+
+## Quick Routes And Chance
+
+Quick routes are named combinations of ordinary filters, not a second hidden classification system:
+
+- **Play something now:** playable and available online.
+- **Give me nonsense:** silly context.
+- **Get serious:** serious context.
+- **Go off-screen:** analog or intermedia format.
+- **Made in a day:** development time of one day or less.
+- **The decorated ones:** award-winning recognition.
+
+`Surprise me` chooses one project from the current visible result set. It respects every active filter, search term, and year. It does not add a random URL parameter or create an indexable duplicate page.
 
 ## Sorting
 
@@ -50,8 +68,17 @@ Example: `Playable` + (`Analog` OR `Intermedia`) + `Exhibited` is not currently 
 - **Series: 1 to 100** follows the project from its beginning.
 - **Year: newest first** and **Year: oldest first** use the recovered publication year, then series order.
 - **Title: A to Z** is alphabetical and ignores series position.
+- **Build time: fastest first** and **Build time: longest first** use normalized public development-time labels; projects without a parseable time remain at the end.
 
 Filtering never silently changes the selected sort. Search and filter state are stored in the URL so a result can be shared.
+
+## Search Discovery
+
+- Every project remains a static HTML page with a unique title, description, canonical URL, and JSON-LD creative-work record.
+- `archive/index.html` is a crawlable text index with direct HTML links to all project pages; the richer visual archive remains the human-first interface.
+- `sitemap.xml` lists the homepage, text index, and every project page. `robots.txt` points to it.
+- Filter combinations canonicalize to the main homepage and are not linked as separate crawl targets, preventing the faceted interface from multiplying duplicate indexable URLs.
+- The canonical origin comes from `JUST404IT_SITE_URL`; it must be changed from the construction preview to `https://just404it.com` only when that domain is ready for cutover.
 
 ## Project Pages
 
@@ -63,6 +90,6 @@ Each project page contains only information already present on the public portfo
 - public credits and recognition;
 - recovered image or public video still when available;
 - adjacent navigation through the 100-game sequence;
-- a clearly secondary link to the legacy WordPress page.
+- an archive-provenance note without linking visitors back to the old WordPress surface.
 
 The private James Archive remains a research map. Any future press, reception, or timeline additions must pass the allowlist in `PUBLICATION_BOUNDARY.md` before publication.

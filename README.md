@@ -9,7 +9,8 @@ This is the new static site for `just404it.com`, generated from the public safet
 - `data/portfolio.json` and `data/portfolio.js` - 91 public project pages representing 100 games.
 - `games/` - locally generated detail pages for every public project entry.
 - `assets/portfolio/` - 22 copied portfolio images from the backup.
-- `archive/index.html` - compatibility entry point for archive links.
+- `archive/index.html` - crawlable text index of all public project pages.
+- `sitemap.xml` and `robots.txt` - generated discovery files for search engines.
 - `DESIGN_SYSTEM.md` - the color, label, filtering, and sorting rules.
 
 ## What Is Not Here
@@ -18,15 +19,11 @@ The complete public-site backup is intentionally kept outside this public reposi
 
 The private James Archive is a research map, not publication content. See `PUBLICATION_BOUNDARY.md` before adding archive-derived material.
 
-## Recommended Free Hosting Path
+## Hosting State
 
-Use Cloudflare Pages as the production host and GitHub as the source repo.
+GitHub is the source repo and GitHub Pages is the current free construction preview.
 
-1. Create a GitHub repo for this folder.
-2. Connect that repo to Cloudflare Pages.
-3. Set `just404it.com` as the primary custom domain.
-4. Add `www.just404it.com`, `justdeleteit.com`, and `www.justdeleteit.com` only after the preview is approved.
-5. Decide whether `justdeleteit.com` redirects to `just404it.com/#archive` or remains a preserved archive domain.
+The generator defaults canonical URLs and the sitemap to the preview URL. At domain cutover, set `JUST404IT_SITE_URL` to the approved production origin before rebuilding.
 
 No DNS, registrar, hosting, or WordPress changes have been made by this generator.
 
@@ -34,6 +31,7 @@ No DNS, registrar, hosting, or WordPress changes have been made by this generato
 
 ```powershell
 $env:JUSTDELETEIT_BACKUP_ROOT = 'C:\path\to\the\extracted-backup'
+$env:JUST404IT_SITE_URL = 'https://just404it.github.io/just404it-site'
 py -3.12 tools\build_static_site.py
 ```
 

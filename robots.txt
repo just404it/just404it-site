@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://just404it.github.io/just404it-site/sitemap.xml

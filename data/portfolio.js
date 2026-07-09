@@ -22,6 +22,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 100/100",
     "developmentTime": "1 day",
+    "developmentDays": 1,
+    "developmentPace": "day-or-less",
     "details": [
       "Play on Game Jolt",
       "Play on Newgrounds",
@@ -62,6 +64,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>Enjoy Bundle Kitt; love Bundle Kitt.</p>\n<p>Meow.</p>\n<p> </p>\n<p><em>“Bundle Kitt… is an absolutely lovely little adventure that recalls Newgrounds-style Flash games in the best possible way.”</em> – <a href=\"https://www.pcgamer.com/free-games-of-the-week/69/\" rel=\"noopener\">PCGamer</a></p>",
     "videoId": "eaZ6jAlymvg",
     "detailPath": "games/bundle-kitt/",
@@ -88,6 +94,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 99/100",
     "developmentTime": "1 day",
+    "developmentDays": 1,
+    "developmentPace": "day-or-less",
     "details": [
       "Play on Game Jolt",
       "Play on Newgrounds",
@@ -125,6 +133,9 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "online"
+    ],
     "bodyHtml": "",
     "videoId": "",
     "detailPath": "games/ancient-temple-of-the-sacred-snails/",
@@ -151,6 +162,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 96/100",
     "developmentTime": "2 days",
+    "developmentDays": 2,
+    "developmentPace": "days",
     "details": [
       "Play on Game Jolt",
       "Play on itch.io",
@@ -192,6 +205,9 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "watch"
+    ],
     "bodyHtml": "<p>fish yum!</p>",
     "videoId": "tlILtGm9V-Q",
     "detailPath": "games/mermay/",
@@ -218,6 +234,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 94/100",
     "developmentTime": "1 week",
+    "developmentDays": 7,
+    "developmentPace": "weeks",
     "details": [
       "Play on Game Jolt",
       "Play on itch.io",
@@ -254,6 +272,9 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "watch"
+    ],
     "bodyHtml": "<p>ASMR game about a tooth having tooth problems.</p>",
     "videoId": "nX4eesp3q8k",
     "detailPath": "games/moist-curds/",
@@ -280,6 +301,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 93/100",
     "developmentTime": "Forever?",
+    "developmentDays": null,
+    "developmentPace": "",
     "details": [
       "Play on Game Jolt",
       "Development time: Forever?",
@@ -307,6 +330,7 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [],
     "bodyHtml": "<p>Rock Soup is an experimental collage game: an <a href=\"https://en.wikipedia.org/wiki/Exquisite_corpse\" rel=\"noopener\">Exquisite Corpse</a> in game form. Anyone can supply art, sound, design, and story for it. Then I stitch it all together. What makes Rock Soup unique beyond the collaborate nature is how Rock Soup is always complete while being incomplete. The game evolves over time as assets are added, but there is no vision in the game beyond crowd-making a game. Any playable build of Rock Soup is a snapshot of the whole, a single frame of what Rock Soup has been and potential for where it might go. If you’d like to submit any art, sound, music, plot, design, or else to Rock Soup, please do with this <a href=\"https://goo.gl/forms/OqcrktCi8UNU1BZb2\" rel=\"noopener\">form: https://goo.gl/forms/OqcrktCi8UNU1BZb2</a>.</p>",
     "videoId": "",
     "detailPath": "games/rock-soup/",
@@ -332,6 +356,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 92/100",
     "developmentTime": "1 day",
+    "developmentDays": 1,
+    "developmentPace": "day-or-less",
     "details": [
       "Play on Game Jolt",
       "Play on Itch.io",
@@ -362,6 +388,9 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "contexts": [],
     "recognition": [],
+    "access": [
+      "online"
+    ],
     "bodyHtml": "<p>An experiment.</p>",
     "videoId": "",
     "detailPath": "games/smb/",
@@ -389,6 +418,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 88/100",
     "developmentTime": "6 hours",
+    "developmentDays": 0.25,
+    "developmentPace": "day-or-less",
     "details": [
       "Play on Game Jolt",
       "Play on itch.io",
@@ -427,6 +458,9 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "watch"
+    ],
     "bodyHtml": "<p>Short game to help you decide if you should harass people online today.</p>",
     "videoId": "gWQRDydwiLY",
     "detailPath": "games/siht/",
@@ -452,6 +486,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 87/100",
     "developmentTime": "3 weeks",
+    "developmentDays": 21,
+    "developmentPace": "weeks",
     "details": [
       "Play on Game Jolt",
       "Play on itch.io",
@@ -492,6 +528,9 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "watch"
+    ],
     "bodyHtml": "<p>Welcome to Innovative Food Company Baby CEO Chickpeep! This is your company, and you are very proud of it.</p>\n<p>Innovative Food Company is a tile-based platform puzzle game. Navigate your way through a building full of bad food.</p>",
     "videoId": "tQn7LY3oWCY",
     "detailPath": "games/ifc/",
@@ -518,6 +557,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 82/100",
     "developmentTime": "2 weeks",
+    "developmentDays": 14,
+    "developmentPace": "weeks",
     "details": [
       "Play on Game Jolt",
       "Play on itch.io",
@@ -559,6 +600,9 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "watch"
+    ],
     "bodyHtml": "<p>There is a Polite Drifter, and you can say “hi” to him, and he will say “hi” back. ? “Hello!”</p>",
     "videoId": "ypZqvbE5jio",
     "detailPath": "games/hi-polite-drifter/",
@@ -584,6 +628,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 81/100",
     "developmentTime": "2 weeks",
+    "developmentDays": 14,
+    "developmentPace": "weeks",
     "details": [
       "Play on Game Jolt",
       "Play on Itch.io",
@@ -619,6 +665,9 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "watch"
+    ],
     "bodyHtml": "<p>War has come to X-Mass. Can you drive off the Colite invasion and save X-Mass the same fate that befell planets I-Mass through IX-Mass?</p>",
     "videoId": "eOys0DrPA5Q",
     "detailPath": "games/war-on-x-mass/",
@@ -646,6 +695,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 97/100",
     "developmentTime": "1 week",
+    "developmentDays": 7,
+    "developmentPace": "weeks",
     "details": [
       "Play on Game Jolt",
       "Play on itch.io",
@@ -678,6 +729,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>An experiment with colors and sounds. Oh wow!</p>",
     "videoId": "sgSbP99A3q4",
     "detailPath": "games/par-t-babe-e/",
@@ -707,6 +762,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 91/100",
     "developmentTime": "3 months",
+    "developmentDays": 90,
+    "developmentPace": "months-plus",
     "details": [
       "Play on Game Jolt",
       "Play on itch.io",
@@ -759,6 +816,9 @@ window.JUST404IT_PORTFOLIO = [
       "award-winning",
       "exhibited"
     ],
+    "access": [
+      "watch"
+    ],
     "bodyHtml": "<p>Congratulations!</p>\n<p>Welcome to MOLOCH (Zero), the official interview simulation for MOLOCH Corporation. If you are reading this, you have been selected as a potential candidate for further screening for the position of [shift manager] within MOLOCH Corporation.</p>\n\n<p>To continue with this potential venture, please complete the following instructions:</p>\n<ol>\n<li>Download the MOLOCH OS with the link provided below.</li>\n<li>Implement the MOLOCH OS by opening the file.</li>\n<li>Proceed to MOLOCH (Zero) interview simulation software to begin your vetting process.</li>\n</ol>",
     "videoId": "bUc1eznn2u4",
     "detailPath": "games/moloch-zero/",
@@ -784,6 +844,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 90/100",
     "developmentTime": "1 year",
+    "developmentDays": 365,
+    "developmentPace": "months-plus",
     "details": [
       "Play on Game Jolt",
       "Official Select at Come Out & Play 2016",
@@ -817,6 +879,7 @@ window.JUST404IT_PORTFOLIO = [
     "recognition": [
       "exhibited"
     ],
+    "access": [],
     "bodyHtml": "<p><em>Foxbox</em> is a competitive game reminiscent of ye olde fox hunts. There are two teams consisting of both foxes and hunters. The foxes have boxes and the opposing team’s hunters want to dunk balls into those fox boxes. Meanwhile the foxes have their own plans; they want to move Victory Boxes into their team’s Goal Squares.</p>",
     "videoId": "",
     "detailPath": "games/fox-box/",
@@ -843,6 +906,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 89/100",
     "developmentTime": "3 months",
+    "developmentDays": 90,
+    "developmentPace": "months-plus",
     "details": [
       "Development time: 3 months",
       "Run time: 24 hours",
@@ -869,6 +934,7 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [],
     "bodyHtml": "<p>Murder Mystery game ran Oct 8th 2016. Four teams of five players each (20 players in total) competed in this reality TV show while trying to figure out who amidst them murdered the show host, Paul Rudd. We built video confessionals into the game so that all players would have to give small testimonies about the event as it went on.</p>\n<p>Logistically, we custom printed producer shirts for ourselves, rented an Air BNB, and had a snapchat filter for the duration of the event (also built into play), and spent a month planning and designing the game. This was the second iteration of a murder mystery game that Robert Horn and I have collaborated on.</p>\n\n\t\t\t#gallery-1 {\n\t\t\t\tmargin: auto;\n\t\t\t}\n\t\t\t#gallery-1 .gallery-item {\n\t\t\t\tfloat: left;\n\t\t\t\tmargin-top: 10px;\n\t\t\t\ttext-align: center;\n\t\t\t\twidth: 33%;\n\t\t\t}\n\t\t\t#gallery-1 img {\n\t\t\t\tborder: 2px solid #cfcfcf;\n\t\t\t}\n\t\t\t#gallery-1 .gallery-caption {\n\t\t\t\tmargin-left: 0;\n\t\t\t}\n\t\t\t/* see gallery_shortcode() in wp-includes/media.php */\n\t\t\n\n\n<a href=\"https://www.justdeleteit.com/portfolio/paul-rudds-american-goos/14463093_10153998234812898_7256052596951592886_n/\" rel=\"noopener\"></a>\n\n\n<a href=\"https://www.justdeleteit.com/portfolio/paul-rudds-american-goos/untitled5/\" rel=\"noopener\"></a>\n\n\n<a href=\"https://www.justdeleteit.com/portfolio/paul-rudds-american-goos/untitled2-3/\" rel=\"noopener\"></a>\n<br/>\n\n<a href=\"https://www.justdeleteit.com/portfolio/paul-rudds-american-goos/goo2/\" rel=\"noopener\"></a>\n\n\n<a href=\"https://www.justdeleteit.com/portfolio/paul-rudds-american-goos/14657544_10210872118461840_2998542204160802043_n/\" rel=\"noopener\"></a>\n\n\n<a href=\"https://www.justdeleteit.com/portfolio/paul-rudds-american-goos/14470403_1175414605858269_5491616045352125327_n/\" rel=\"noopener\"></a>\n<br/>\n\n<a href=\"https://www.justdeleteit.com/portfolio/paul-rudds-american-goos/14492550_10210190819549431_6115177484699161973_n/\" rel=\"noopener\"></a>\n\n\n<a href=\"https://www.justdeleteit.com/portfolio/paul-rudds-american-goos/untitled-6/\" rel=\"noopener\"></a>\n\n\n<a href=\"https://www.justdeleteit.com/portfolio/paul-rudds-american-goos/goo1/\" rel=\"noopener\"></a>\n<br/>\n\n<a href=\"https://www.justdeleteit.com/portfolio/paul-rudds-american-goos/14433174_10154018375872898_8405768489845754723_n/\" rel=\"noopener\"></a>\n\n<br/>",
     "videoId": "",
     "detailPath": "games/paul-rudds-american-goos/",
@@ -895,6 +961,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 85/100",
     "developmentTime": "1 week",
+    "developmentDays": 7,
+    "developmentPace": "weeks",
     "details": [
       "Play on Game Jolt",
       "Play on itch.io",
@@ -926,6 +994,9 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "watch"
+    ],
     "bodyHtml": "<p>As the world turns to darkness, two young lovers born on the moon must gather a party and defeat the evil that has come to consume Earth. Little do they know that the worst of all may be close to home.</p>\n<p><a href=\"https://www.youtube.com/watch?v=yfUdn8AtwSw\" rel=\"noopener\">Featuring N079 by Relaxdaily</a>.</p>",
     "videoId": "ZrfevBS4L3k",
     "detailPath": "games/moon-legacy-fallen-angels/",
@@ -953,6 +1024,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 84/100",
     "developmentTime": "3 days",
+    "developmentDays": 3,
+    "developmentPace": "days",
     "details": [
       "Play on Game Jolt",
       "Development time: 3 days",
@@ -989,6 +1062,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>First game where my role was solely programmer.</p>",
     "videoId": "jjUxaczo6O4",
     "detailPath": "games/charlie-made-a-brown/",
@@ -1014,6 +1091,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 78/100",
     "developmentTime": "2 hours",
+    "developmentDays": 0.083,
+    "developmentPace": "day-or-less",
     "details": [
       "Play on Game Jolt",
       "Play on itch.io",
@@ -1041,6 +1120,9 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "contexts": [],
     "recognition": [],
+    "access": [
+      "online"
+    ],
     "bodyHtml": "<p>Game version of <a href=\"https://www.youtube.com/watch?v=JTEFKFiXSx4\" rel=\"noopener\">4’33”</a>.</p>",
     "videoId": "",
     "detailPath": "games/433-exe/",
@@ -1067,6 +1149,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 77/100",
     "developmentTime": "1 week",
+    "developmentDays": 7,
+    "developmentPace": "weeks",
     "details": [
       "Play on Game Jolt",
       "Development time: 1 week",
@@ -1094,6 +1178,9 @@ window.JUST404IT_PORTFOLIO = [
       "jam"
     ],
     "recognition": [],
+    "access": [
+      "watch"
+    ],
     "bodyHtml": "<p>Twas brillig and the slivey toves…</p>\n<p>An art test more than a mechanically driven game.</p>",
     "videoId": "98ZlyNyJRyI",
     "detailPath": "games/the-beamish-thing/",
@@ -1121,6 +1208,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 76/100",
     "developmentTime": "3 hours",
+    "developmentDays": 0.125,
+    "developmentPace": "day-or-less",
     "details": [
       "Download Mega pack",
       "Download source for Horny Chix",
@@ -1158,6 +1247,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "download",
+      "watch"
+    ],
     "bodyHtml": "<p>3 Hour game jam run by <a href=\"http://megausc.com/about\" rel=\"noopener\">MEGA</a>, all participants had 3 hours to make a 4 player local multiplayer game. At the end of the jam, all the games were compiled into a single WarioWare/Mario Party style mix. Bethany Martin and I made the game Horny Chix. Make as many offspring with your opponents before time runs out. Negative points for mating with offspring.</p>",
     "videoId": "khYyGWw5dow",
     "detailPath": "games/mega-3-hour-game-jam-game/",
@@ -1183,6 +1276,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 75/100",
     "developmentTime": "1 month",
+    "developmentDays": 30,
+    "developmentPace": "months-plus",
     "details": [
       "Play on Game Jolt",
       "Play on itch.io",
@@ -1223,6 +1318,11 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "contexts": [],
     "recognition": [],
+    "access": [
+      "online",
+      "watch",
+      "rules"
+    ],
     "bodyHtml": "<p>Print a map,<br/>\nmark your location,<br/>\nor be lost forever.</p>\n<p>With music by <a href=\"https://twitter.com/king_spooner\" rel=\"noopener\">Jack King-Spooner</a></p>",
     "videoId": "yqArlLgbxOA",
     "detailPath": "games/nivearum/",
@@ -1248,6 +1348,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 74/100",
     "developmentTime": "1 day",
+    "developmentDays": 1,
+    "developmentPace": "day-or-less",
     "details": [
       "Download from Game Jolt",
       "Download from itch.io",
@@ -1279,6 +1381,10 @@ window.JUST404IT_PORTFOLIO = [
       "serious"
     ],
     "recognition": [],
+    "access": [
+      "download",
+      "watch"
+    ],
     "bodyHtml": "<p>dont let go</p>",
     "videoId": "fY4o06zTS_M",
     "detailPath": "games/dont-let-go/",
@@ -1311,6 +1417,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 86/100",
     "developmentTime": "6 months",
+    "developmentDays": 180,
+    "developmentPace": "months-plus",
     "details": [
       "Company Website",
       "Play on itch.io",
@@ -1395,6 +1503,9 @@ window.JUST404IT_PORTFOLIO = [
       "award-winning",
       "exhibited"
     ],
+    "access": [
+      "watch"
+    ],
     "bodyHtml": "<p>You’re alone at home, and you heard about this thing called porn at school.</p>\n<p>You Must be 18 or Older to Enter is the first digital game to be released through my brother’ and my studio <a href=\"http://www.seempoint.com/\" rel=\"noopener\">Seemingly Pointless</a>.</p>\n<p> </p>",
     "videoId": "C_gUyVwDKEU",
     "detailPath": "games/you-must-be-18-or-older-to-enter/",
@@ -1421,6 +1532,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 80/100",
     "developmentTime": "2 month",
+    "developmentDays": 60,
+    "developmentPace": "months-plus",
     "details": [
       "Download rules PFD on GameJolt",
       "Download rules PFD on Itch.io",
@@ -1464,6 +1577,10 @@ window.JUST404IT_PORTFOLIO = [
     "recognition": [
       "exhibited"
     ],
+    "access": [
+      "download",
+      "rules"
+    ],
     "bodyHtml": "<p>Ten Games You Can Play With Business Cards is a DIY zine collaboration between <a href=\"https://twitter.com/PoshRaven\" rel=\"noopener\">Samuel Leigh</a> and James Earl Cox III. Whip out this zine, pull out a few business cards, go nuts, have a good time. Play with some business cards.</p>",
     "videoId": "",
     "detailPath": "games/ten-games-you-can-play-with-business-cards/",
@@ -1488,6 +1605,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 73/100",
     "developmentTime": "1 day",
+    "developmentDays": 1,
+    "developmentPace": "day-or-less",
     "details": [
       "Download Rules PDF",
       "Game Jolt GDC party drinking game 2016",
@@ -1517,6 +1636,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "download",
+      "rules"
+    ],
     "bodyHtml": "<p>A retake/modification on the drinking game <a href=\"http://en.wikipedia.org/wiki/Kings_%28game%29\" rel=\"noopener\">King’s/King’s Cup</a>.</p>\n<p>The main difference between Predetermined King’s and normal King’s is that in Predetermined King’s, all of the cards are face up from the start. You can see every card that will be played. More so, the cards are in a spiral, and the players must pick the outermost card: all feeling of random and mystery has been removed.</p>",
     "videoId": "",
     "detailPath": "games/predetermined-kings/",
@@ -1542,6 +1665,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 72/100",
     "developmentTime": "1 month",
+    "developmentDays": 30,
+    "developmentPace": "months-plus",
     "details": [
       "Download Rules PDF",
       "IndieCade E3 Official Selection 2015",
@@ -1574,6 +1699,10 @@ window.JUST404IT_PORTFOLIO = [
     "recognition": [
       "exhibited"
     ],
+    "access": [
+      "download",
+      "rules"
+    ],
     "bodyHtml": "<p>The world has been devastated by (insert man-made disaster here). All the continents have been left devoid of human life. All but Australia, because those guys are tough as nails. So now, with two major factions in Australia ready to repopulate the world, who will be able to spread their ideology faster and farther?</p>",
     "videoId": "",
     "detailPath": "games/australia-repopulates-the-world-the-game/",
@@ -1600,6 +1729,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 71/100",
     "developmentTime": "2 months",
+    "developmentDays": 60,
+    "developmentPace": "months-plus",
     "details": [
       "Play on Game Jolt",
       "Play on itch.io",
@@ -1636,6 +1767,9 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "contexts": [],
     "recognition": [],
+    "access": [
+      "online"
+    ],
     "bodyHtml": "<p>5 different scenes; all the same assets, just different ways to view it. Based on <a href=\"http://www.lacma.org/art/exhibition/levitated-mass\" rel=\"noopener\">Levitating Mass</a>.</p>\n<p>Press numbers 1, 2, 3, 4, 5 to change between the different views of the same object.</p>",
     "videoId": "",
     "detailPath": "games/prodigious-loom/",
@@ -1664,6 +1798,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 70/100",
     "developmentTime": "2 weeks",
+    "developmentDays": 14,
+    "developmentPace": "weeks",
     "details": [
       "Play on itch.io",
       "Play on Game Jolt",
@@ -1702,6 +1838,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>Cheeseburger (in Paradise) by Joe Cox</p>\n<p>Cheeseburger (in Paradise) by James Earl Cox III</p>\n<p>Cheeseburger (in Paradise) by MC Freeman</p>",
     "videoId": "JVLbHjHG6h0",
     "detailPath": "games/cheeseburger-in-paradise/",
@@ -1728,6 +1868,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 69/100",
     "developmentTime": "3 hours",
+    "developmentDays": 0.125,
+    "developmentPace": "day-or-less",
     "details": [
       "Play on Game Jolt",
       "Play on itch.io",
@@ -1760,6 +1902,9 @@ window.JUST404IT_PORTFOLIO = [
       "jam"
     ],
     "recognition": [],
+    "access": [
+      "online"
+    ],
     "bodyHtml": "<p>again.</p>",
     "videoId": "",
     "detailPath": "games/tomatoes/",
@@ -1785,6 +1930,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 68/100",
     "developmentTime": "1 month",
+    "developmentDays": 30,
+    "developmentPace": "months-plus",
     "details": [
       "Play on Game Jolt",
       "Play on itch.io",
@@ -1816,6 +1963,9 @@ window.JUST404IT_PORTFOLIO = [
       "music"
     ],
     "recognition": [],
+    "access": [
+      "watch"
+    ],
     "bodyHtml": "<p>Music Video(game) featuring <a href=\"https://soundcloud.com/cruisr/cruisr-all-over-bear-face-remix\" rel=\"noopener\">CRUISR – All Over (Bear//Face Remix)</a></p>\n<p>A music video(game) about dead cats. RIP cats.</p>\n<p><em>“It lasts roughly five minutes, and yet it manages to present the strong theme of the loss of a loved one in a fresh and extremely touching fashion.”</em> – <a href=\"http://indiegames.com/2015/03/music_videogame_itll_all_be_ok.html\" rel=\"noopener\">IndieGames</a></p>\n<p><em>“oh and look up there, it’s Jesus with a kitty’s head.”</em> – <a href=\"http://www.pcgamer.com/the-best-free-games-of-the-week-71/\" rel=\"noopener\">PC Gamer</a></p>\n<p><em>“It’ll All Be Ok, a touching Music Video(game) about grief … showcases the power of this new genre in a mere 5 minutes.”</em> – <a href=\"http://www.arcadeist.com/music-videogames/\" rel=\"noopener\">The Arcadeist</a></p>",
     "videoId": "ZMH6mEPjfTU",
     "detailPath": "games/itll-all-be-ok/",
@@ -1842,6 +1992,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 67/100",
     "developmentTime": "2 weeks",
+    "developmentDays": 14,
+    "developmentPace": "weeks",
     "details": [
       "Play on Game Jolt",
       "Play on itch.io",
@@ -1888,6 +2040,9 @@ window.JUST404IT_PORTFOLIO = [
     "recognition": [
       "exhibited"
     ],
+    "access": [
+      "online"
+    ],
     "bodyHtml": "<p>An interactive fiction Twine game about a boy and a girl and a general.</p>\n<p>Music and soundscape by  <a href=\"https://twitter.com/goodkingjules\" rel=\"noopener\">Julie Buchanan</a></p>",
     "videoId": "",
     "detailPath": "games/i-can-feel-it-coming-in-the-air-tonight/",
@@ -1913,6 +2068,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 66/100",
     "developmentTime": "1 day",
+    "developmentDays": 1,
+    "developmentPace": "day-or-less",
     "details": [
       "Play on Game Jolt",
       "Play on Itch.io",
@@ -1943,6 +2100,10 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "contexts": [],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>Ride an elevator; meet some folks.</p>",
     "videoId": "SsUc9p0MpCg",
     "detailPath": "games/10-stories-up-elevator/",
@@ -1970,6 +2131,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 65/100",
     "developmentTime": "2 days",
+    "developmentDays": 2,
+    "developmentPace": "days",
     "details": [
       "Download from Game Jolt",
       "Download from itch.io",
@@ -2003,6 +2166,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "download",
+      "watch"
+    ],
     "bodyHtml": "<p>They come to your home and you’re feed up with this bullying-bunny school stuff so you take the fight back to them HA.; sponsored by C.H.E.A.Z.E.E.T.Z.™: macro cheese flavor in micro cracker bites™. Hundreds of hours of content! Like Doom meets Sissy’s Magical Ponycorn Adventure with a lava level and a moon forest like you always wanted.</p>\n<p>“I think it’s pretty good.” – Tom P. Traggard, C.H.E.A.Z.E.E.T.Z.™ local representative.</p>\n\n<p><strong>Technology Notes:</strong></p>\n<p>No children were employed in the making of this game all crayon art was drawn by fully functioning adults and sponsored by C.H.E.A.Z.E.E.T.Z.™ You will need human body parts to play this game like hands and eyes and ears. This game is playable on any system if you try hard enough.</p>\n\n<p><strong>Credits:</strong></p>\n<p><a href=\"https://twitter.com/goodkingjules\" rel=\"noopener\">Julie Buchanan</a> – Sound Designer, Music Artist, and C.H.E.A.Z.E.E.T.Z.™ fanatic.</p>\n<p><a href=\"https://twitter.com/theTHEBATMAN\" rel=\"noopener\">James Earl Cox III</a> – Designer, Crayon Folk-Artist, and C.H.E.A.Z.E.E.T.Z.™ fanatic.</p>\n<p><a href=\"https://twitter.com/joe_m_cox\" rel=\"noopener\">Joe Cox</a> – Music Artist and C.H.E.A.Z.E.E.T.Z.™ fanatic.</p>\n<p><a href=\"https://twitter.com/zach_r_d\" rel=\"noopener\">Zach R.D. </a>– Designer, Developer, and C.H.E.A.Z.E.E.T.Z.™ fanatic.</p>\n<p><a href=\"https://twitter.com/therealchar68\" rel=\"noopener\">Dennis McGrogan</a> – Designer, Developer, and C.H.E.A.Z.E.E.T.Z.™ fanatic.</p>\n<p>C.H.E.A.Z.E.E.T.Z.™ – Sponsor and #1 Best Cheese Cracker in the World.</p>\n<p>Additional Crayon Folk-Art provided by <a href=\"https://twitter.com/ElliottMahler\" rel=\"noopener\">Elliott Mahler</a>.</p>\n\n<p><em>*This statement has not been authorized by the FDA</em></p>\n\n\n<h2>Install instructions</h2>\n<p><strong>Installation Instructions:</strong></p>\n<ol>\n<li>Double click the download link.</li>\n<li>Open up your download folder.</li>\n<li>Double click the downloaded file.</li>\n<li>Open up your box of C.H.E.A.Z.E.E.T.Z.™ flavorful Crunch Cheese Crackers™ packed full of mouth watering cheese explosion.</li>\n<li>WASD to move, Mouse to move camera, and click to shoot.</li>\n<li>Enjoy your healthy* alternative snack fit for a true cyber Amazonian warrior.</li>\n</ol>",
     "videoId": "bHXp6uidt0c",
     "detailPath": "games/going-ham-an-amazonian-bunny-revenge-tale-o-sponsored-by-c-h-e-a-z-e-e-t-z-brand-cheese-snack-crackers/",
@@ -2028,6 +2195,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 64/100",
     "developmentTime": "",
+    "developmentDays": null,
+    "developmentPace": "",
     "details": [
       "Play on Game Jolt",
       "Play on itch.io",
@@ -2058,6 +2227,9 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "contexts": [],
     "recognition": [],
+    "access": [
+      "online"
+    ],
     "bodyHtml": "<p>Imagine that stock photo image, but with a game of snake on it.</p>\n<ul>\n<li><a href=\"http://stockphoto.com/photo/MTc1NjgxMWY1YmNmYjBlZA==/-woman-smiling-drinking-tea/\" rel=\"noopener\">Readymade game: Snack photo from stockphoto</a><br/>\n<a href=\"http://sandbox.yoyogames.com/games/9275\" rel=\"noopener\">Snake code from yoyo games.com</a><br/>\n<a href=\"http://www.pippinbarr.com/2015/01/09/game-readymades/\" rel=\"noopener\">Explanation can be found here</a></li>\n</ul>",
     "videoId": "",
     "detailPath": "games/snack/",
@@ -2081,6 +2253,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 98/100",
     "developmentTime": "2 weeks",
+    "developmentDays": 14,
+    "developmentPace": "weeks",
     "details": [
       "Play on Game Jolt",
       "Download here",
@@ -2106,6 +2280,9 @@ window.JUST404IT_PORTFOLIO = [
     "platforms": [],
     "contexts": [],
     "recognition": [],
+    "access": [
+      "download"
+    ],
     "bodyHtml": "<p>Punishment is a folk card game. All it requires is a deck of playing cards.</p>",
     "videoId": "",
     "detailPath": "games/punishment/",
@@ -2134,6 +2311,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 95/100",
     "developmentTime": "1 week",
+    "developmentDays": 7,
+    "developmentPace": "weeks",
     "details": [
       "Play on Game Jolt",
       "Development time: 1 week",
@@ -2166,6 +2345,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>Snake Pit: Full of Snakes. Submisison for <a href=\"https://twitter.com/moshboy\" rel=\"noopener\">MoshBoy</a>‘s PirateBay Bundle 2.</p>",
     "videoId": "vWZHJ7RXalU",
     "detailPath": "games/snake-pit/",
@@ -2192,6 +2375,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 83/100",
     "developmentTime": "1 day",
+    "developmentDays": 1,
+    "developmentPace": "day-or-less",
     "details": [
       "Play on Game Jolt",
       "Play on itch.io",
@@ -2226,6 +2411,9 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "watch"
+    ],
     "bodyHtml": "<p><em>⚠️️WARNING: DO NOT PLAY HOT CUP⚠️️</em></p>\n<p>Hot Cup is a cooperative boredom folk game.</p>\n<p><em>⚠️️WARNING: DO NOT PLAY HOT CUP⚠️️</em></p>",
     "videoId": "51ogs5_2kXQ",
     "detailPath": "games/hot-cup/",
@@ -2253,6 +2441,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 79/100",
     "developmentTime": "2 months",
+    "developmentDays": 60,
+    "developmentPace": "months-plus",
     "details": [
       "Play on Game Jolt",
       "Development time: 2 months",
@@ -2279,6 +2469,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>Made for #CandyJam back in 2014, help a village of gummy bears climb for their lives. Side scroller tower builder meets Tetris.</p>",
     "videoId": "s2-z2MYDZ2o",
     "detailPath": "games/gummy-bear-saga-the-candy-block-scroller/",
@@ -2306,6 +2500,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 63/100",
     "developmentTime": "1 week",
+    "developmentDays": 7,
+    "developmentPace": "weeks",
     "details": [
       "Download on Game Jolt",
       "Download on itch.io",
@@ -2349,6 +2545,10 @@ window.JUST404IT_PORTFOLIO = [
     "recognition": [
       "exhibited"
     ],
+    "access": [
+      "download",
+      "watch"
+    ],
     "bodyHtml": "<p>Welcome to the big race, Salmontha; this is the one you’ve been working for. It’s the race that ended your father 7 years ago. Now you can finally make peace. Are you ready? Music video(game) featuring <a href=\"https://www.youtube.com/watch?v=KD5fLb-WgBU\" rel=\"noopener\">Sigma – Nobody To Love</a> &amp; heavilly inspired by <a href=\"https://www.youtube.com/watch?v=BBAtAM7vtgc\" rel=\"noopener\">Kanye – Bound 2</a></p>",
     "videoId": "Mdq9n1u896s",
     "detailPath": "games/you-dont-know-the-half-of-it-fins-of-the-father/",
@@ -2374,6 +2574,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 62/100",
     "developmentTime": "1 day",
+    "developmentDays": 1,
+    "developmentPace": "day-or-less",
     "details": [
       "Play on Game Jolt",
       "Development time: 1 day",
@@ -2400,6 +2602,9 @@ window.JUST404IT_PORTFOLIO = [
       "interactive-fiction"
     ],
     "recognition": [],
+    "access": [
+      "online"
+    ],
     "bodyHtml": "<p>It’s hot.</p>\n<p>You wipe the sweat from your head.</p>",
     "videoId": "",
     "detailPath": "games/burn-baby-burn/",
@@ -2429,6 +2634,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 61/100",
     "developmentTime": "4 days",
+    "developmentDays": 4,
+    "developmentPace": "days",
     "details": [
       "Play on itch.io",
       "Play on Game Jolt",
@@ -2482,6 +2689,10 @@ window.JUST404IT_PORTFOLIO = [
       "award-winning",
       "exhibited"
     ],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>Interactive Reflection; a music video(game) featuring Transitivity by <a href=\"https://soundcloud.com/juliebuchanan\" rel=\"noopener\">Julie Buchanan</a>.</p>\n<p>“<em>Tem­po­ral­ity got to me, as I sus­pect it will you.</em>“-<a href=\"http://www.pcgamer.com/the-best-free-games-of-the-week-47/\" rel=\"noopener\">PC Gamer</a></p>\n<p>“<em>Tem­po­ral­ity dis­plays unique beauty that encour­ages inter­pre­ta­tion</em>” –<a href=\"http://gamebias.wordpress.com/2014/10/21/mountain-vs-temporality/\" rel=\"noopener\">Game Bias</a></p>\n<p>“<em>it made me shed some tears too if I have to be honest.</em>” – <a href=\"http://www.creepygaming.net/2014/10/temporality-battlefield-of-lost-memories.html\" rel=\"noopener\">Creep­yGam­ing</a></p>",
     "videoId": "Dm59lXXgIvA",
     "detailPath": "games/temporality/",
@@ -2508,6 +2719,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 60/100",
     "developmentTime": "3 days",
+    "developmentDays": 3,
+    "developmentPace": "days",
     "details": [
       "Play on Game Jolt",
       "Development time: 3 days",
@@ -2539,6 +2752,10 @@ window.JUST404IT_PORTFOLIO = [
       "personal"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>Mama wants to get a dog but the cats won’t like it so we made this. Its pretty much a dog without being a dog so everyone wins!</p>",
     "videoId": "OkE9aBOY_i0",
     "detailPath": "games/computer-pupdog/",
@@ -2564,6 +2781,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 59/100",
     "developmentTime": "2 months",
+    "developmentDays": 60,
+    "developmentPace": "months-plus",
     "details": [
       "Download rules PDF on Itch.io",
       "Displayed at Come Out & Play Festival 2015",
@@ -2605,6 +2824,10 @@ window.JUST404IT_PORTFOLIO = [
     "recognition": [
       "exhibited"
     ],
+    "access": [
+      "download",
+      "rules"
+    ],
     "bodyHtml": "<p>Run around on all fours, flipping off other hermits’ shells and fighting over a heavy sack. This yard is only big enough for one hermit team.</p>",
     "videoId": "",
     "detailPath": "games/hermitug/",
@@ -2630,6 +2853,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 58/100",
     "developmentTime": "1 month",
+    "developmentDays": 30,
+    "developmentPace": "months-plus",
     "details": [
       "Download rules PFD on Itch.io",
       "Displayed at 2014 Come Out and Play San Fransisco",
@@ -2667,6 +2892,10 @@ window.JUST404IT_PORTFOLIO = [
     "recognition": [
       "exhibited"
     ],
+    "access": [
+      "download",
+      "rules"
+    ],
     "bodyHtml": "<p>A big awkward social game inspired by <a href=\"http://grantreid.tumblr.com/\" rel=\"noopener\">Wink No More</a> &amp; <a href=\"http://benedictfritz.com/blog/2013/5/15/martian-middle-school-dance\" rel=\"noopener\">Martian Middle School Dance</a>.</p>\n<p>The Intergalactic Conference is almost here, and you just realized that you will be the only sentient life-form from your planet in attendance! Good thing there is a Space Masquerade to help break the ice. I hope it doesn’t get too awkward.</p>",
     "videoId": "",
     "detailPath": "games/2001-a-space-masquerade/",
@@ -2692,6 +2921,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Games 56-57/100",
     "developmentTime": "3 days",
+    "developmentDays": 3,
+    "developmentPace": "days",
     "details": [
       "https://bottom_feeders.itch.io/: Play on itch.io",
       "Development time: 3 days",
@@ -2716,6 +2947,7 @@ window.JUST404IT_PORTFOLIO = [
       "jam"
     ],
     "recognition": [],
+    "access": [],
     "bodyHtml": "<p>Two game submissions for Barfcade.</p>",
     "videoId": "",
     "detailPath": "games/bottom_feeders-games/",
@@ -2743,6 +2975,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 55/100",
     "developmentTime": "1 day",
+    "developmentDays": 1,
+    "developmentPace": "day-or-less",
     "details": [
       "Play on Game Jolt",
       "Development time: 1 day",
@@ -2775,6 +3009,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>The kingdom is in trouble! Time to fall in some pits!</p>",
     "videoId": "lcb1Bj9-xwA",
     "detailPath": "games/pit-adventure/",
@@ -2802,6 +3040,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 54/100",
     "developmentTime": "1 week",
+    "developmentDays": 7,
+    "developmentPace": "weeks",
     "details": [
       "Play on Game Jolt",
       "Cover art by Emma Mochi",
@@ -2839,6 +3079,9 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "online"
+    ],
     "bodyHtml": "<p>Ruff Rocket Ride is a game about a dog with a rocket strapped to its back because dogs are bad creatures.</p>",
     "videoId": "",
     "detailPath": "games/ruff-rocket-ride/",
@@ -2866,6 +3109,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 53/100",
     "developmentTime": "2 days",
+    "developmentDays": 2,
+    "developmentPace": "days",
     "details": [
       "http://gamejolt.com/games/respire/32975: Play on Game Jolt",
       "https://just404it.itch.io/respire: Play on itch.io",
@@ -2899,6 +3144,10 @@ window.JUST404IT_PORTFOLIO = [
       "music"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>Explore and escape from a starship tomb; with the featured song <a href=\"https://soundcloud.com/twoparenthome/last-level\" rel=\"noopener\">Last Level</a> by <a href=\"https://soundcloud.com/twoparenthome\" rel=\"noopener\">Two Parent Home</a>.</p>\n<p>WASD to move; slow down to find radio direction (but beware the spirits).</p>",
     "videoId": "BsiDzIYXveo",
     "detailPath": "games/respire/",
@@ -2924,6 +3173,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 52/100",
     "developmentTime": "",
+    "developmentDays": null,
+    "developmentPace": "",
     "details": [
       "Play on itch.io",
       "Play on itch.io",
@@ -2955,6 +3206,9 @@ window.JUST404IT_PORTFOLIO = [
       "jam"
     ],
     "recognition": [],
+    "access": [
+      "watch"
+    ],
     "bodyHtml": "<p>Change channels until you get sick of it!</p>",
     "videoId": "eUcfC5syL5M",
     "detailPath": "games/channel-surfer/",
@@ -2981,6 +3235,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 51/100",
     "developmentTime": "1 week",
+    "developmentDays": 7,
+    "developmentPace": "weeks",
     "details": [
       "Play on Game Jolt",
       "Inspired a poem",
@@ -3017,6 +3273,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>A “drunk game” where a few non-game-making friends drink, and then I have them design a game, make all the art, and make all the assets in one night. The next day, <a href=\"http://www.poophand.com/\" rel=\"noopener\">Joe</a> and I put it together following their design as closely as possible.</p>\n<p>A bit late for <a href=\"https://twitter.com/hashtag/crappygamejam?src=hash\" rel=\"noopener\">#crappyjam</a>.</p>",
     "videoId": "HQmqQ83XV94",
     "detailPath": "games/abe-lincoln-puts-out-the-sun/",
@@ -3041,6 +3301,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 50/100",
     "developmentTime": "2 weeks",
+    "developmentDays": 14,
+    "developmentPace": "weeks",
     "details": [
       "Download the rules PDF",
       "Development time: 2 weeks",
@@ -3065,6 +3327,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "download",
+      "rules"
+    ],
     "bodyHtml": "<p><strong>Intro:</strong></p>\n<p><em>There are two facts about this sort of bad film:</em></p>\n<ol>\n<li><em>They are hard to watch alone</em></li>\n<li><em>Other people might watch if you offer them alcohol</em></li>\n</ol>\n<p><em>So here is a Birdemic drinking game!</em></p>\n<p>There are two parts to the Birdemic Drinking Game rules; the team part (Team Bird or Team Human), and then the individual part (Personal Rules). Each player will choose one of the teams to be on in the first part (human or bird), and then choose one or two rules from the individual part, to follow on their own.</p>",
     "videoId": "",
     "detailPath": "games/birdemic-drinking-game/",
@@ -3091,6 +3357,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 49/100",
     "developmentTime": "1 day",
+    "developmentDays": 1,
+    "developmentPace": "day-or-less",
     "details": [
       "Play on Game Jolt",
       "Play on itch.io",
@@ -3132,6 +3400,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>Garugol (Lord of Shadows) got the big promotion and is now the new executively appointed Arch Duke of the pyramid realm.</p>\n<p><em>“Garugol, Lord of Shadows, executively appointed Arch Duke of the Pyramid Realm brought a big silly grin to my face when I played it this morning”</em></p>\n<p>– <a href=\"http://www.pcgamer.com/the-best-free-games-of-the-week-33/\" rel=\"noopener\">PC Gamer</a></p>",
     "videoId": "SuK08KaLD0U",
     "detailPath": "games/garugol-lord-of-shadows-executively-appointed-arch-duke-of-the-pyramid-realm/",
@@ -3158,6 +3430,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 48/100",
     "developmentTime": "1 day",
+    "developmentDays": 1,
+    "developmentPace": "day-or-less",
     "details": [
       "Play on Game Jolt",
       "Play on Newgrounds",
@@ -3190,6 +3464,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>An exercise in futility.</p>",
     "videoId": "zmuZBX4ZfS8",
     "detailPath": "games/cat-herder/",
@@ -3217,6 +3495,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 47/100",
     "developmentTime": "4 days",
+    "developmentDays": 4,
+    "developmentPace": "days",
     "details": [
       "Play on Newgrounds",
       "Play on itch.io",
@@ -3255,6 +3535,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>Help your mamma get something to eat.</p>\n<p><a href=\"http://gamejolt.com/profile/jack-spinoza/16561/\" rel=\"noopener\"><em><strong>Music by Jack Spinoza</strong></em></a></p>\n<p><em>“James Earl Cox III with his Glitch Jam and wathtajam (women are too hard to animate jam) entry has completely blown my mind away.”</em><br/>\n–<a href=\"http://www.creepygaming.net/2014/06/rodent-queens-eat-their-offspring-bring.html\" rel=\"noopener\">Creepy</a><a href=\"http://www.creepygaming.net/2014/06/rodent-queens-eat-their-offspring-bring.html\" rel=\"noopener\"> Gaming</a></p>",
     "videoId": "GZ1vZ7wLBvg",
     "detailPath": "games/rodent-queens-eat-their-offspring/",
@@ -3284,6 +3568,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 46/100",
     "developmentTime": "",
+    "developmentDays": null,
+    "developmentPace": "",
     "details": [
       "Download from itch.io",
       "Download from Game Jolt",
@@ -3325,6 +3611,10 @@ window.JUST404IT_PORTFOLIO = [
       "award-winning",
       "exhibited"
     ],
+    "access": [
+      "download",
+      "watch"
+    ],
     "bodyHtml": "<p>Bottle Rockets is a music videogame about a mother and her daughter with <a href=\"https://itunes.apple.com/us/album/i-care-because-you-do/id50235162\" rel=\"noopener\">Alberto Balsalm by Aphex Twin</a> as the featured song.</p>\n<p><em>“the game had forever changed the song for me. There are emotions and memories attached to it that weren’t before. It means much more to me now.”</em><br/>\n–<a href=\"http://killscreendaily.com/articles/bottle-rockets/\" rel=\"noopener\"> Kill Screen</a></p>\n<p><em>“It’s depressing, endearing, tear-jerking, hopeful and devastating all at once.”</em><br/>\n– <a href=\"http://web.archive.org/web/20140828122714/http://indiestatik.com/2014/06/24/bottle-rockets/\" rel=\"noopener\">IndieStatik</a></p>\n<p><em>“Bottle Rockets is a small, melancholy masterpiece.”</em><br/>\n– <a href=\"http://www.rockpapershotgun.com/2014/06/29/live-free-play-hard-sublime-nightmare-wish-fulfillment/\" rel=\"noopener\">Rock, Paper, Shotgun</a></p>\n<p><em>“This platformer runs for five minutes … and in that time it had me sobbing.”</em><br/>\n– <a href=\"http://wip.warpdoor.com/2014/06/22/warp-doors-pocket-dimension-3/\" rel=\"noopener\">WarpDoor</a></p>\n<p><em>“Bottle Rockets made me feel a whole bunch of feels, and I’m happy to say so.”</em><br/>\n– <a href=\"http://jayisgames.com/archives/2014/08/bottle_rockets.php\" rel=\"noopener\">Jay Is Games</a></p>\n<p><em>“oh hell, just play it already.”</em><br/>\n–<a href=\"http://www.pcgamer.com/2014/06/28/the-best-free-games-of-the-week-32/\" rel=\"noopener\">PC Gamer</a></p>",
     "videoId": "tJQML5EObOE",
     "detailPath": "games/bottle-rockets/",
@@ -3351,6 +3641,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 45/100",
     "developmentTime": "2 weeks",
+    "developmentDays": 14,
+    "developmentPace": "weeks",
     "details": [
       "Download the rules from Game Jolt",
       "Special select at IndieCade 2014",
@@ -3382,6 +3674,10 @@ window.JUST404IT_PORTFOLIO = [
       "award-winning",
       "exhibited"
     ],
+    "access": [
+      "download",
+      "rules"
+    ],
     "bodyHtml": "Pool noodles, throwing socks, basket poles, and hula-hoops come together in one fierce game: Kill the Kraken!\n\nA fast paced asymmetric-team field game for 8 to 14 players, Kill the Kraken! is inspired by Humans versus Zombies and simulates a humans versus monster scenario. But rather than pitting human players against a horde of Zombies, Kill the Kraken! pits them against a single giant enemy. One team takes on the role of the Kraken, all connected by yarn and running rampant with pool noodles. The other team plays as the humans, tasked with defeating the Kraken via throwing socks. The rules are easy to understand, even by non-gamers and as a round of Kill the Kraken! lasts between 5 to 15 minutes, it provides a quick fun field experience.",
     "videoId": "",
     "detailPath": "games/kill-the-kraken/",
@@ -3408,6 +3704,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 44/100",
     "developmentTime": "6 hours",
+    "developmentDays": 0.25,
+    "developmentPace": "day-or-less",
     "details": [
       "Play on Game Jolt",
       "Play on itch.io",
@@ -3444,6 +3742,10 @@ window.JUST404IT_PORTFOLIO = [
       "personal"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>A game for Mother for <a href=\"http://en.wikipedia.org/wiki/Mother's_Day\" rel=\"noopener\">Mother’s Day.</a></p>",
     "videoId": "TyUz1HGbcsk",
     "detailPath": "games/mothers-day/",
@@ -3473,6 +3775,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 43/100",
     "developmentTime": "",
+    "developmentDays": null,
+    "developmentPace": "",
     "details": [
       "Play on Game Jolt",
       "Play on Newgrounds",
@@ -3525,6 +3829,10 @@ window.JUST404IT_PORTFOLIO = [
       "award-winning",
       "exhibited"
     ],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>The World the Children Made is a narrative adaptation of Ray Bradbury’s <a href=\"http://www.veddma.com/veddma/Veldt.htm\" rel=\"noopener\"><em>The Veldt</em></a>.</p>\n<p><em>“I spent half my time with The World the Children Made wishing that James Earl Cox III had made the movement speed a little faster, and the other half smiling at the extraordinary pixel art and synthy ’80s/<a href=\"http://egyptology.bandcamp.com/\" rel=\"noopener\">Egyptology-esque</a> soundtrack.” </em><br/>\n– <a href=\"http://www.pcgamer.com/2014/06/07/the-best-free-games-of-the-week-29/\" rel=\"noopener\">PCGamer.com</a></p>",
     "videoId": "TDITr4C4d3k",
     "detailPath": "games/the-world-the-children-made/",
@@ -3551,6 +3859,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 42/100",
     "developmentTime": "2 days",
+    "developmentDays": 2,
+    "developmentPace": "days",
     "details": [
       "Play on Game Jolt",
       "Play on Newgrounds",
@@ -3587,6 +3897,10 @@ window.JUST404IT_PORTFOLIO = [
       "jam"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>“Under the surface” was the theme of this jam.<br/>\nWe all find meaning when there may be none; searching for reason underneath the nonsense that is everywhere.<br/>\nOh, and a clown is just a person with silly make-up on. So that fits too. And this game is played in their mouth. Triple score.</p>\n<p><em>“Seemingly Pointless of course, couldn’t be less extravagant than the others, and with their Murder Clown they almost managed to scare me off.”</em> –<a href=\"http://www.creepygaming.net/2014/04/murder-clown-psychedelic-short.html\" rel=\"noopener\"> CreepyGaming.net</a></p>\n<p>“<em>It’s too early in the morning for this bullshit.</em>” – <a href=\"https://www.youtube.com/watch?v=vKj6lM5QYkE\" rel=\"noopener\">Markiplier</a></p>",
     "videoId": "vKj6lM5QYkE",
     "detailPath": "games/murder-clown/",
@@ -3617,6 +3931,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Games 33-41/100",
     "developmentTime": "",
+    "developmentDays": null,
+    "developmentPace": "",
     "details": [
       "kid",
       "Games 33, 34, 35, 36, 37, 38, 39, 40, 41 of 100"
@@ -3633,6 +3949,7 @@ window.JUST404IT_PORTFOLIO = [
     "platforms": [],
     "contexts": [],
     "recognition": [],
+    "access": [],
     "bodyHtml": "<p>a kid bugged me for advice once but wouldn’t take it</p>",
     "videoId": "",
     "detailPath": "games/x/",
@@ -3658,6 +3975,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 32/100",
     "developmentTime": "3 days",
+    "developmentDays": 3,
+    "developmentPace": "days",
     "details": [
       "Download from Game Jolt",
       "Download from itch.io",
@@ -3689,6 +4008,10 @@ window.JUST404IT_PORTFOLIO = [
       "jam"
     ],
     "recognition": [],
+    "access": [
+      "download",
+      "watch"
+    ],
     "bodyHtml": "<p>A game for #flappyjam. I wanted to make a Flappy Bird game that was 2 player; a verses mode. Yet, adding a single player mode was too appealing. In the vein of simplicity, there is no built in high-score. It may come later though.</p>\n<p>Inspired by Flappy Bird and <a href=\"http://game140.com/\" rel=\"noopener\">140 (http://game140.com/)</a></p>",
     "videoId": "4scarduLqtM",
     "detailPath": "games/hover-cube/",
@@ -3713,6 +4036,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 31/100",
     "developmentTime": "2 days",
+    "developmentDays": 2,
+    "developmentPace": "days",
     "details": [
       "Download from Global Game Jam",
       "Development time: 2 days",
@@ -3741,6 +4066,9 @@ window.JUST404IT_PORTFOLIO = [
       "jam"
     ],
     "recognition": [],
+    "access": [
+      "download"
+    ],
     "bodyHtml": "<p>FACE is uncomfortable. Your skin feels weird. Explore a world inhabited by faces. The faces of previous players. Your hair grows at uneven paces. When FACE begins, it’ll ask two things: it’ll ask you to sign an honesty contract, and it’ll want to take a photo of your face. Your doppelganger is dangerous. It has a marker and draws on people’s faces. It’s wearing your face. Beat it in a staring contest. Then you’ll become part of FACE. You’re ugly. And everyone will see it.</p>\n<p> </p>",
     "videoId": "",
     "detailPath": "games/face/",
@@ -3767,6 +4095,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 30/100",
     "developmentTime": "10 days",
+    "developmentDays": 10,
+    "developmentPace": "days",
     "details": [
       "Play on Newgrounds",
       "Play on itch.io",
@@ -3804,6 +4134,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>Quickly! The nasal spiders are coming in 10 minutes and you have to find the 4 mystical pig heads to stop them. There isn’t much time Snot Boy, go now!</p>\n<p> </p>\n<p><em>“Everything about this game is a joke”</em>– James</p>",
     "videoId": "bbg7PqW51yY",
     "detailPath": "games/snot-city/",
@@ -3831,6 +4165,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 29/100",
     "developmentTime": "2 weeks",
+    "developmentDays": 14,
+    "developmentPace": "weeks",
     "details": [
       "Play on Game Jolt",
       "Play on Newgrounds",
@@ -3881,6 +4217,10 @@ window.JUST404IT_PORTFOLIO = [
     "recognition": [
       "exhibited"
     ],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>EnviroGolf: An An environmentally savvy text-based golf game.</p>\n<p>Psudo-text based golf game? That sounds awful!</p>\n<p>And it is! EnviroGolf was conceived several years ago as a running joke. While there is no real theme to the game as sports games, text games, and environmentally savvy games can all be swell, the general idea behind EnviroGolf was to make a game of a genre we strongly dislike; in this case, a combination of genre, style, and purpose that don’t mesh well.</p>\n<p><em>“To be honest, I wasn’t much of a fan of golf before playing <a href=\"http://gamejolt.com/games/sports/envirogolf/21265/\" rel=\"noopener\">EnviroGolf</a>, but now? Huh, I hate golf! Probably.</em>” – <a href=\"https://web.archive.org/web/20140828122142/http://indiestatik.com/2014/01/17/envirogolf/\" rel=\"noopener\">IndieStatik</a></p>\n<p><em>“Finally, A Game That Makes You Feel Terrible About Liking Golf”</em> – <a href=\"http://kotaku.com/finally-a-game-that-makes-you-feel-terrible-about-liki-1503460922\" rel=\"noopener\">Kotaku</a></p>",
     "videoId": "alcIn3RiOO4",
     "detailPath": "games/envirogolf/",
@@ -3906,6 +4246,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 28/100",
     "developmentTime": "3 months",
+    "developmentDays": 90,
+    "developmentPace": "months-plus",
     "details": [
       "Play on Game Jolt",
       "Play on Newgrounds",
@@ -3946,6 +4288,9 @@ window.JUST404IT_PORTFOLIO = [
       "serious"
     ],
     "recognition": [],
+    "access": [
+      "watch"
+    ],
     "bodyHtml": "<p>In this short action packed scenario, take control of an unblinking commie-crushing man-of-steel as you experience a war game like none you’ve ever played before. Attempt to save countless and prove that any problem can be solved with testosterone, guns, and brawn. The bomb has dropped, and there’s no holding back now.</p>",
     "videoId": "DHDHQa-m92E",
     "detailPath": "games/ussr/",
@@ -3972,6 +4317,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 27/100",
     "developmentTime": "2 months",
+    "developmentDays": 60,
+    "developmentPace": "months-plus",
     "details": [
       "Play on Game Jolt",
       "Development time: 2 months",
@@ -3999,6 +4346,9 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "watch"
+    ],
     "bodyHtml": "<p>Help Forest, the alligator man, run! Runner is a cross-genre critical infinite-runner/idle game.</p>\n<p><strong>Credits:</strong><br/>\nSong:</p>\n<ul>\n<li>Fuck Vixens, Get Money – <a href=\"http://www.youtube.com/user/WOAHFOX\" rel=\"noopener\">Woahfox</a></li>\n<li>Dance Your Heart Out! – <a href=\"http://www.youtube.com/user/WOAHFOX\" rel=\"noopener\">Woahfox</a></li>\n<li>Maybe She’s Just Allergic to Me – <a href=\"http://www.youtube.com/user/WOAHFOX\" rel=\"noopener\">Woahfox</a></li>\n<li>Innocence is beautiful imperfection – <a href=\"http://www.youtube.com/user/WOAHFOX\" rel=\"noopener\">Woahfox</a></li>\n<li>Crush on you – <a href=\"http://www.youtube.com/user/WOAHFOX\" rel=\"noopener\">Woahfox</a></li>\n<li>Lo-Fi world – <a href=\"https://soundcloud.com/8-bitchintendo/lo-fi-world\" rel=\"noopener\">8-BITchin’tendo</a></li>\n</ul>",
     "videoId": "fCNjUaqA_Eo",
     "detailPath": "games/runner/",
@@ -4026,6 +4376,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 26/100",
     "developmentTime": "3 days",
+    "developmentDays": 3,
+    "developmentPace": "days",
     "details": [
       "Play on Game Jolt",
       "Play on Newgrounds",
@@ -4068,6 +4420,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>Those Zestbois™ are at it again. Since they’ve only one life to live, and with unimaginable amounts of cash laying around, they’ve decided to go all out and take some luxury cars on a winter time joy race.</p>\n<p>Zestboi™ Ice Racing is a hybrid masocore/racing game. The object is to win the race, yet crashing into obstacles causes a race restart.</p>",
     "videoId": "9GoL4aSJNTw",
     "detailPath": "games/zestboi-ice-racing/",
@@ -4092,6 +4448,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 25/100",
     "developmentTime": "2 months",
+    "developmentDays": 60,
+    "developmentPace": "months-plus",
     "details": [
       "Download the rules PDF",
       "Development time: 2 months",
@@ -4116,6 +4474,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "download",
+      "rules"
+    ],
     "bodyHtml": "<p>A drinking game that results in a film. This game is still fairly mold-able. We work out a few kinks with each play. We have yet to fully complete a round of the game.</p>",
     "videoId": "",
     "detailPath": "games/drunk-script-1-0/",
@@ -4142,6 +4504,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 24/100",
     "developmentTime": "3 months",
+    "developmentDays": 90,
+    "developmentPace": "months-plus",
     "details": [
       "Download from Itch.io",
       "Exhibited at Miami of Ohio Art Museum 2013 - 2014",
@@ -4175,6 +4539,10 @@ window.JUST404IT_PORTFOLIO = [
     "recognition": [
       "exhibited"
     ],
+    "access": [
+      "download",
+      "watch"
+    ],
     "bodyHtml": "<p>A mini-narrative piece set to an interactive soundtrack. The graphics are all hand-drawn in the pencil to paper sense (as opposed to the pointer to tablet sense) and combine with the music and narrative to make a little self-contained work.</p>",
     "videoId": "fDVwh8sp7ng",
     "detailPath": "games/childrens-day/",
@@ -4202,6 +4570,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 23/100",
     "developmentTime": "3 day",
+    "developmentDays": 3,
+    "developmentPace": "days",
     "details": [
       "Play on Newgrounds",
       "Play on Game Jolt",
@@ -4239,6 +4609,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>Toilet World: an Alternative Arcade RPG game about toilets and the hazards of drinking too much water. Too bad you can’t hold it in long enough to upgrade those stats infinitely.</p>\n<p>Arrow Keys to move.</p>\n<p>Mouse to mash and upgrade your stats.</p>",
     "videoId": "wFbe-qBfHWQ",
     "detailPath": "games/toilet-world/",
@@ -4264,6 +4638,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 22/100",
     "developmentTime": "too long",
+    "developmentDays": null,
+    "developmentPace": "",
     "details": [
       "Play on Game Jolt",
       "Development time: too long",
@@ -4289,6 +4665,9 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "contexts": [],
     "recognition": [],
+    "access": [
+      "online"
+    ],
     "bodyHtml": "<p>This game is a life experience. No two playthoughs of this game will be the same, yet all players will have the shared experience of this game. That is something they can bond over and talk about, something that could bring people together that wouldn’t otherwise interact.</p>\n<p><em>“One of the most profound games of our time”</em><br/>\n– <a href=\"http://seeminglypointless.com/joecox/\" rel=\"noopener\">Joe Cox</a>, Cinematographer</p>\n<p><em>“This game really made me reflect … A very refreshing experience!”</em><br/>\n– Bailey Cuccaro, Graphic Designer</p>\n<p><em>“This is a work….a profound work…of Kaufmenesque hypermediated ludology…truly masterful.”</em><br/>\n– <a href=\"http://bensironko.tumblr.com/\" rel=\"noopener\">Ben Sironko</a>, Lugologist</p>\n<p><em>‘be offended by this’ sifted my mind to its sheer simplicity. never have i felt more vulnerable. never have i felt more alive. never have i felt more… offended.</em><br/>\n– <a href=\"http://www.elevenelevenstudios.com/\" rel=\"noopener\">Denver Coulson</a>, Indie Developer</p>",
     "videoId": "",
     "detailPath": "games/be-offended-by-this/",
@@ -4315,6 +4694,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 21/100",
     "developmentTime": "1 day",
+    "developmentDays": 1,
+    "developmentPace": "day-or-less",
     "details": [
       "Play on Game Jolt",
       "Play on Newgrounds",
@@ -4351,6 +4732,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>Mutant feeding simulation game.</p>\n<p>A game for <a href=\"http://www.molyjam.com/\" rel=\"noopener\">MolyJam2013</a><br/>\nThemed quote for the game:<br/>\n“I don’t think experiments should be just experiments. They should start becoming things.”</p>",
     "videoId": "rlhBzXasaYk",
     "detailPath": "games/foodie/",
@@ -4374,6 +4759,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 20/100",
     "developmentTime": "",
+    "developmentDays": null,
+    "developmentPace": "",
     "details": [
       "dont play the game",
       "dont play the game",
@@ -4400,6 +4787,9 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "contexts": [],
     "recognition": [],
+    "access": [
+      "watch"
+    ],
     "bodyHtml": "<p><strong>Pixel Pet is a canceled game. I found this footage on Harvey’s phone when I discovered his apartment abandoned. </strong></p>",
     "videoId": "7Q8VkT5hwtQ",
     "detailPath": "games/pixel-pet-canceled/",
@@ -4425,6 +4815,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 19/100",
     "developmentTime": "3 days",
+    "developmentDays": 3,
+    "developmentPace": "days",
     "details": [
       "Play on Game Jolt",
       "Development time: 3 days",
@@ -4455,6 +4847,9 @@ window.JUST404IT_PORTFOLIO = [
       "serious"
     ],
     "recognition": [],
+    "access": [
+      "watch"
+    ],
     "bodyHtml": "<p>The mole people must pay.<br/>\nShort one button/any button, critical game.</p>",
     "videoId": "rEvsDHmpADU",
     "detailPath": "games/the-mole-people-must-pay/",
@@ -4481,6 +4876,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 18/100",
     "developmentTime": "1 week",
+    "developmentDays": 7,
+    "developmentPace": "weeks",
     "details": [
       "Download from Game Jolt",
       "Download from itch.io",
@@ -4517,6 +4914,10 @@ window.JUST404IT_PORTFOLIO = [
       "serious"
     ],
     "recognition": [],
+    "access": [
+      "download",
+      "watch"
+    ],
     "bodyHtml": "<p>Remediation game designed for last attempt corrections for particularly troubled youth. Failure to complete this game may result in removal from society. Please do not attempt to find the surveillance units. They are only present for monitoring your progress. Have a pleasant day.</p>\n<p><em>“It’s when we get gems like this pop up that I’m reminded of all the possibilities of the horror game”</em><br/>\n– <a href=\"https://web.archive.org/web/20140401093721/http://indiestatik.com/2013/06/24/surveillance-education-and-horror-3-blind-mice-a-remediation-game-for-improper-children/\" rel=\"noopener\">IndieStatik</a></p>\n<p><em>“You can’t forgive yourself for never being good enough. You can’t forgive yourself for being abandoned. You play it again.” </em><br/>\n–<a href=\"http://www.rockpapershotgun.com/2013/07/23/3-blind-mice-a-remediation-game-for-improper-children/\" rel=\"noopener\">Rock, Paper, Shotgun</a></p>",
     "videoId": "YtBhWDB7Vms",
     "detailPath": "games/3-blind-mice-a-remediation-game-for-improper-children/",
@@ -4542,6 +4943,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 17/100",
     "developmentTime": "2 months",
+    "developmentDays": 60,
+    "developmentPace": "months-plus",
     "details": [
       "Print Instructions",
       "Development time: 2 months",
@@ -4567,6 +4970,9 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "rules"
+    ],
     "bodyHtml": "<p><strong>FTL Drinking Game V1.2</strong><br/>\nLink to PDF version of <strong><a href=\"http://FTL Drinking Game V1.2 Link to PDF version of FTL Drinking Game V1.2 (based off of http://pastebin.com/KFqZejm0) A game for 3 to 4 (legal drinking age) players\" rel=\"noopener\">FTL Drinking Game V1.2</a></strong></p>\n<p>(based off of  <a href=\"http://pastebin.com/KFqZejm0\" rel=\"noopener\">http://pastebin.com/KFqZejm0</a>)<br/>\nA party game for 3 to 4 (legal drinking age) players.</p>\n<p>Requires FTL to play.</p>",
     "videoId": "",
     "detailPath": "games/ftl-drinking-game/",
@@ -4592,6 +4998,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 16/100",
     "developmentTime": "1 day",
+    "developmentDays": 1,
+    "developmentPace": "day-or-less",
     "details": [
       "http://gamejolt.com/games/i-m-a-little-teapot/15427: Play on Game Jolt",
       "http://www.newgrounds.com/portal/view/622354: Play on Newgrounds",
@@ -4626,6 +5034,9 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "online"
+    ],
     "bodyHtml": "<p>I’m a lit­tle teapot,<br/>\nShort and stout,<br/>\nHere is my han­dle,<br/>\nHere is my spout.<br/>\nWhen I get all steamed up,<br/>\nHear me shout,<br/>\nTip me over and pour me out!</p>",
     "videoId": "",
     "detailPath": "games/im-a-little-teapot/",
@@ -4649,6 +5060,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 15/100",
     "developmentTime": "2 months",
+    "developmentDays": 60,
+    "developmentPace": "months-plus",
     "details": [
       "Download for mobile",
       "Development time: 2 months",
@@ -4671,6 +5084,10 @@ window.JUST404IT_PORTFOLIO = [
     "platforms": [],
     "contexts": [],
     "recognition": [],
+    "access": [
+      "download",
+      "watch"
+    ],
     "bodyHtml": "<p>The Tell-tale Heart game was an attempt to make a player steadily act more wildly (shaking the device) as the character descends into madness.</p>",
     "videoId": "RcxA7CqK1Xw",
     "detailPath": "games/poes-tell-tale-heartthe-game/",
@@ -4698,6 +5115,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 14/100",
     "developmentTime": "2 days",
+    "developmentDays": 2,
+    "developmentPace": "days",
     "details": [
       "Play on Game Jolt",
       "Play on Newgrounds",
@@ -4735,6 +5154,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>The Old Man and the Lake is a short game rich with metaphors and old man and robotic fish.</p>",
     "videoId": "grgqIqKF0mA",
     "detailPath": "games/the-old-man-and-the-lake/",
@@ -4761,6 +5184,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 13/100",
     "developmentTime": "1 day",
+    "developmentDays": 1,
+    "developmentPace": "day-or-less",
     "details": [
       "Play on Game Jolt",
       "Development time: 1 day",
@@ -4788,6 +5213,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>There are two versions of LOTMITE. One is with the use of MSPaint(ish) art while the other is with Google images. The gameplay is exactly the same. It’s sort of an experiment about how art can affect play.</p>",
     "videoId": "yM1AlBO99Bc",
     "detailPath": "games/lotmite/",
@@ -4812,6 +5241,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 12/100",
     "developmentTime": "3 months",
+    "developmentDays": 90,
+    "developmentPace": "months-plus",
     "details": [
       "Download for iPhone",
       "Development time: 3 months",
@@ -4836,6 +5267,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "download",
+      "watch"
+    ],
     "bodyHtml": "<p>Treasure hunting meets lemmings. A game idea I had been longing to bring to live and led a student team to prototype.</p>",
     "videoId": "VpI2ERP7WvI",
     "detailPath": "games/minianda-janes/",
@@ -4863,6 +5298,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 11/100",
     "developmentTime": "2 days",
+    "developmentDays": 2,
+    "developmentPace": "days",
     "details": [
       "Play on Game Jolt",
       "Play on Newgrounds",
@@ -4905,6 +5342,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>Made during<strong><a href=\"http://www.ludumdare.com/compo/ludum-dare-26/?action=preview&amp;uid=18421\" rel=\"noopener\"> Ludum Dare 26</a>. </strong>Potato or Big Minta Bronson: A Vegetable Love Story is an abomination and should be put down immediately. I’m sorry ma’am, but we simply have no other choice: It’s abrasive, loud, rude, and scary.</p>",
     "videoId": "mlZkWEE6hDE",
     "detailPath": "games/potato-or-big-minta-bronson-a-vegetable-love-story/",
@@ -4930,6 +5371,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 10/100",
     "developmentTime": "2 days",
+    "developmentDays": 2,
+    "developmentPace": "days",
     "details": [
       "Source code on Global Game Jam",
       "Development time: 2 days",
@@ -4955,6 +5398,7 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [],
     "bodyHtml": "<p>A two player co-op same screen game, work together with a partner to escape from what lurks behind you.</p>",
     "videoId": "",
     "detailPath": "games/90-degrees/",
@@ -4983,6 +5427,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 9/100",
     "developmentTime": "3 months",
+    "developmentDays": 90,
+    "developmentPace": "months-plus",
     "details": [
       "Play on Game Jolt",
       "Play on Itch.io",
@@ -5047,6 +5493,9 @@ window.JUST404IT_PORTFOLIO = [
       "award-winning",
       "exhibited"
     ],
+    "access": [
+      "watch"
+    ],
     "bodyHtml": "<p>An Occurrence at Owl Creek Bridge is a short 5 to 10 minute game adaptation of the Civil War story by the same name written by Ambrose Bierce. Besides the title screen, there are no words within the game spoken or written, allowing the player to immerse themselves within the story. The original story can be read <a href=\"http://fiction.eserver.org/short/occurrence_at_owl_creek.html\" rel=\"noopener\">here</a>.</p>\n<p><em>“A testament to how video games can be used to tell a story.”</em><br/>\n– <a href=\"https://web.archive.org/web/20160713013402/http://www.indiegamemag.com/indie-intermission-an-occurrence-at-owl-creek-bridge-not-your-typical-game/\" rel=\"noopener\">IndieGameMag</a></p>\n<p><em>“It’s thought-provoking and emotionally gripping, should you let it be”</em><br/>\n–<a href=\"https://web.archive.org/web/20140216110147/http://indiestatik.com/2013/02/13/an-occurrence-at-owl-creek-bridge-might-be-the-best-short-story-ive-ever-played/\" rel=\"noopener\"> IndieStatik</a></p>\n<p><em>“It  embodies something very rare in gaming today –  a very strong and compelling message that demonstrates how game design can be an art and how video games can be used to tell a story.”</em><br/>\n– <a href=\"http://30plusgamer.com/review/owl-creek/\" rel=\"noopener\">30PlusGamer</a></p>\n<p><em>“It appears James… has succeeded in blurring the distinction between reading a story and actually being put in the role of the protagonist.”</em><br/>\n– <a href=\"http://pc.gameswarp.com/game-review/an-occurrence-at-owl-creek-bridge-2/\" rel=\"noopener\">GamesWarp</a></p>",
     "videoId": "-yxbJ0t0Uvg",
     "detailPath": "games/an-occurrence-at-owl-creek-bridge/",
@@ -5074,6 +5523,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 8/100",
     "developmentTime": "Two weeks",
+    "developmentDays": 14,
+    "developmentPace": "weeks",
     "details": [
       "Play on Game Jolt",
       "Development time: Two weeks",
@@ -5102,6 +5553,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>A masocore maze game. Arrow keys to move and make sure to avoid enemies. The maze patterns change (slightly) with each play through, so each experience will be ever-so-slightly-different.</p>",
     "videoId": "yWuiIo4weO8",
     "detailPath": "games/baileys-game/",
@@ -5130,6 +5585,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 7/100",
     "developmentTime": "1 day",
+    "developmentDays": 1,
+    "developmentPace": "day-or-less",
     "details": [
       "Play on Game Jolt",
       "Warning: Has flashing lights",
@@ -5164,6 +5621,9 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "online"
+    ],
     "bodyHtml": "<p><strong>Do not view if you have issues with flashing colors and lights. This one is full of ’em. Plane jam game.</strong></p>\n<p>JoeGame is perfect game! Jump platform! Collect coin! Fight cat! Joe go! King of MSPaint Games!</p>\n<p>Lots of level too.</p>\n<p> </p>",
     "videoId": "",
     "detailPath": "games/joegame/",
@@ -5192,6 +5652,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 6/100",
     "developmentTime": "Two months",
+    "developmentDays": 60,
+    "developmentPace": "months-plus",
     "details": [
       "Play on Game Jolt",
       "Play on Newgrounds",
@@ -5235,6 +5697,10 @@ window.JUST404IT_PORTFOLIO = [
     "recognition": [
       "exhibited"
     ],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>Short game about a duck. WASD or arrow keys to move, M to mute. ESC to quit. Though quiting isn’t always as easy as it would appear…</p>",
     "videoId": "OULs984dYD8",
     "detailPath": "games/the-duck-game/",
@@ -5262,6 +5728,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 5/100",
     "developmentTime": "4 days",
+    "developmentDays": 4,
+    "developmentPace": "days",
     "details": [
       "Play on Game Jolt",
       "Development time: 4 days",
@@ -5294,6 +5762,10 @@ window.JUST404IT_PORTFOLIO = [
       "silly"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>Made during <strong><a href=\"http://www.ludumdare.com/compo/ludum-dare-25/?action=preview&amp;uid=18421\" rel=\"noopener\">Ludum Dare 25</a></strong>, Cat Licker is a point racking game where the goal is to lick as many cats as possible before time runs out. In the distant future, this game will be used to separate the licker novices from the licker kings.</p>",
     "videoId": "X0KlDUwfVB8",
     "detailPath": "games/cat-licker/",
@@ -5320,6 +5792,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 4/100",
     "developmentTime": "One month",
+    "developmentDays": 30,
+    "developmentPace": "months-plus",
     "details": [
       "Play on Game Jolt",
       "Play on Newgrounds",
@@ -5352,6 +5826,10 @@ window.JUST404IT_PORTFOLIO = [
       "serious"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>DarkWhite is a short sidescrolling critical game that questions the relationship between the player, in game characters, and narrative goals. This theme (and art) will be reworked into future games.</p>\n<p>Music</p>\n<p><a href=\"http://moonshark.newgrounds.com/\" rel=\"noopener\">Caves by MoonShark</a></p>\n<p><a href=\"http://viewtifulday.newgrounds.com/\" rel=\"noopener\">-=Touch the Sky=- by viewtifulday</a></p>",
     "videoId": "oRDFshto-a4",
     "detailPath": "games/darkwhite/",
@@ -5381,6 +5859,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 3/100",
     "developmentTime": "One month",
+    "developmentDays": 30,
+    "developmentPace": "months-plus",
     "details": [
       "Play on Kongregate",
       "Play on Game Jolt",
@@ -5431,6 +5911,10 @@ window.JUST404IT_PORTFOLIO = [
       "award-winning",
       "exhibited"
     ],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>A simple sidescrolling critical game that questions the importance of goals and authority in games. There is only one way to win the game: ‘don’t kill the cow’, but is winning the game worth it? How much do the simple phrases like ‘you win’ and ‘you lose’ mean to the player?</p>\n<p><em>“Don’t Kill The Cow is a very interesting social commentary on how we view games in the now.”</em><br/>\n– <a href=\"https://web.archive.org/web/20160820200647/http://indiegamemag.com/indie-intermission-dont-kill-the-cow/\" rel=\"noopener\">Indie Game Magazine</a></p>",
     "videoId": "aeBulTBxpvY",
     "detailPath": "games/dont-kill-the-cow/",
@@ -5456,6 +5940,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 2/100",
     "developmentTime": "3 days",
+    "developmentDays": 3,
+    "developmentPace": "days",
     "details": [
       "Play on Game Jolt",
       "Development time: 3 days",
@@ -5482,6 +5968,9 @@ window.JUST404IT_PORTFOLIO = [
       "serious"
     ],
     "recognition": [],
+    "access": [
+      "online"
+    ],
     "bodyHtml": "<p>A little game to demonstrate the four different types of metafiction that videogames can have; the idea it supports can be <a href=\"http://gamasutra.com/blogs/JamesCox/20141006/227006/The_Four_Types_of_Metafiction_in_Videogames.php\" rel=\"noopener\">read here</a>.</p>\n<p>The four types of metafictional in games:</p>\n<ul>\n<li>Imersive</li>\n<li>Emmersive</li>\n<li>Internal</li>\n<li>External</li>\n</ul>\n<p>Use WASD or arrow keys to move.</p>\n<p>Song is <a href=\"http://www.newgrounds.com/audio/listen/496083\" rel=\"noopener\">Minor-Problem by Psychoserial-Leegion</a> on Newgrounds.com</p>",
     "videoId": "",
     "detailPath": "games/metafiction-in-videogames/",
@@ -5508,6 +5997,8 @@ window.JUST404IT_PORTFOLIO = [
     ],
     "seriesLabel": "Game 1/100",
     "developmentTime": "1 week",
+    "developmentDays": 7,
+    "developmentPace": "weeks",
     "details": [
       "Play on Game Jolt",
       "Play on Newgrounds",
@@ -5540,6 +6031,10 @@ window.JUST404IT_PORTFOLIO = [
       "serious"
     ],
     "recognition": [],
+    "access": [
+      "online",
+      "watch"
+    ],
     "bodyHtml": "<p>Landers is a Space Invader inspired and themed critical game. Take on the role of an Invader entering the invasion force. What is your war story?</p>",
     "videoId": "wAfiFSMaa8w",
     "detailPath": "games/landers/",

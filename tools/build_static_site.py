@@ -12,6 +12,9 @@ from bs4 import BeautifulSoup
 
 
 SITE_ROOT = Path(__file__).resolve().parents[1]
+SITE_URL = os.environ.get(
+    "JUST404IT_SITE_URL", "https://just404it.github.io/just404it-site"
+).rstrip("/")
 BACKUP_ROOT = Path(
     os.environ.get("JUSTDELETEIT_BACKUP_ROOT", SITE_ROOT / ".source-backup")
 ).expanduser()
@@ -37,7 +40,20 @@ CONTEXT_CATEGORIES = {
     "Music Videogames": "music",
 }
 RECOGNITION_CATEGORIES = {"Award Winning": "award-winning", "Exhibited": "exhibited"}
+ACCESS_LABELS = {
+    "online": "Play online",
+    "download": "Download",
+    "watch": "Watch",
+    "rules": "Rules / print",
+}
+PACE_LABELS = {
+    "day-or-less": "One day or less",
+    "days": "Days",
+    "weeks": "Weeks",
+    "months-plus": "Months+",
+}
 ALLOWED_ARTICLE_TAGS = {"p", "em", "strong", "blockquote", "ul", "ol", "li", "br", "a", "h2", "h3"}
+NUMBER_WORDS = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6}
 
 
 def compact(value: str) -> str:
@@ -169,6 +185,31 @@ def series_label(numbers: list[int]) -> str:
     return "Games " + ", ".join(str(value) for value in numbers) + "/100"
 
 
+def development_scale(value: str) -> tuple[float | None, str]:
+    normalized = compact(value).lower()
+    match = re.search(r"(\d+|one|two|three|four|five|six)\s*(hour|day|week|month|year)s?", normalized)
+    if not match:
+        return None, ""
+    amount = int(match.group(1)) if match.group(1).isdigit() else NUMBER_WORDS[match.group(1)]
+    unit = match.group(2)
+    days = amount / 24 if unit == "hour" else amount
+    if unit == "week":
+        days *= 7
+    elif unit == "month":
+        days *= 30
+    elif unit == "year":
+        days *= 365
+    if unit == "hour" or (unit == "day" and amount <= 1):
+        pace = "day-or-less"
+    elif unit == "day":
+        pace = "days"
+    elif unit == "week":
+        pace = "weeks"
+    else:
+        pace = "months-plus"
+    return round(days, 3), pace
+
+
 def extract_portfolio_entry(path: Path) -> dict:
     slug = path.parent.name
     soup = BeautifulSoup(path.read_text(encoding="utf-8", errors="ignore"), "html.parser")
@@ -216,6 +257,16 @@ def extract_portfolio_entry(path: Path) -> dict:
     platforms = [PLATFORM_CATEGORIES[cat] for cat in categories if cat in PLATFORM_CATEGORIES]
     contexts = [CONTEXT_CATEGORIES[cat] for cat in categories if cat in CONTEXT_CATEGORIES]
     recognition = [RECOGNITION_CATEGORIES[cat] for cat in categories if cat in RECOGNITION_CATEGORIES]
+    development_days, development_pace = development_scale(development_time)
+    access = []
+    if "web" in platforms:
+        access.append("online")
+    if any(re.search(r"\bdownload\b", link["label"], re.I) for link in links):
+        access.append("download")
+    if video_match:
+        access.append("watch")
+    if any(re.search(r"\b(rules?|print)\b", link["label"], re.I) for link in links):
+        access.append("rules")
 
     return {
         "slug": slug,
@@ -229,6 +280,8 @@ def extract_portfolio_entry(path: Path) -> dict:
         "gameNumbers": game_numbers,
         "seriesLabel": series_label(game_numbers),
         "developmentTime": development_time,
+        "developmentDays": development_days,
+        "developmentPace": development_pace,
         "details": details,
         "links": links[:12],
         "credits": credits,
@@ -237,6 +290,7 @@ def extract_portfolio_entry(path: Path) -> dict:
         "platforms": platforms,
         "contexts": contexts,
         "recognition": recognition,
+        "access": access,
         "bodyHtml": extract_article_html(soup),
         "videoId": video_match.group(1) if video_match else "",
         "detailPath": f"games/{slug}/",
@@ -249,6 +303,29 @@ def sort_key(entry: dict) -> tuple:
     year = int(entry["year"]) if entry.get("year", "").isdigit() else 0
     game = max(entry.get("gameNumbers") or [0])
     return (-year, -game, entry["title"].lower())
+
+
+def trim_meta(value: str, limit: int = 155) -> str:
+    value = compact(value)
+    if len(value) <= limit:
+        return value
+    shortened = value[: limit + 1].rsplit(" ", 1)[0].rstrip(" ,;:-")
+    return shortened + "."
+
+
+def project_meta_description(entry: dict, public_description: str) -> str:
+    if len(compact(public_description)) >= 50:
+        return trim_meta(public_description)
+    year = f" ({entry['year']})" if entry.get("year") else ""
+    descriptors = []
+    descriptors.extend(entry.get("formats", [])[:1])
+    descriptors.extend(entry.get("contexts", [])[:2])
+    descriptor_text = ", ".join(value.replace("-", " ") for value in descriptors)
+    suffix = f" {descriptor_text.capitalize()} game." if descriptor_text else ""
+    return trim_meta(
+        f"{entry['title']}, {entry['seriesLabel']} by James Earl Cox III, "
+        f"from the 100 Games in 5 Years archive{year}.{suffix}"
+    )
 
 
 def build_portfolio_data() -> list[dict]:
@@ -308,7 +385,10 @@ def build_index_html(entries: list[dict]) -> str:
     )
 
     def facet_count(field: str, value: str) -> int:
-        return sum(value in entry.get(field, []) for entry in entries)
+        return sum(
+            value in current if isinstance(current := entry.get(field), list) else current == value
+            for entry in entries
+        )
 
     def facet_button(group: str, value: str, label: str, count: int) -> str:
         return (
@@ -328,11 +408,49 @@ def build_index_html(entries: list[dict]) -> str:
         facet_button("platforms", value, label, facet_count("platforms", value))
         for label, value in PLATFORM_CATEGORIES.items()
     )
+    recognition_buttons = "".join(
+        facet_button("recognition", value, label, facet_count("recognition", value))
+        for label, value in RECOGNITION_CATEGORIES.items()
+    )
+    access_buttons = "".join(
+        facet_button("access", value, label, facet_count("access", value))
+        for value, label in ACCESS_LABELS.items()
+    )
+    pace_buttons = "".join(
+        facet_button("pace", value, label, facet_count("developmentPace", value))
+        for value, label in PACE_LABELS.items()
+    )
     years = sorted({entry["year"] for entry in entries if entry["year"]}, reverse=True)
     year_options = "".join(f'<option value="{year}">{year}</option>' for year in years)
     represented_games = len({number for entry in entries for number in entry["gameNumbers"]})
     playable_count = sum(entry["playable"] for entry in entries)
     recognized_count = sum(entry["hasAccolade"] for entry in entries)
+    home_description = (
+        "Games, films, writing, and experiments by James Earl Cox III, "
+        "including the complete 100 Games in 5 Years archive."
+    )
+    home_schema = json.dumps(
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "WebSite",
+                    "@id": f"{SITE_URL}/#website",
+                    "url": f"{SITE_URL}/",
+                    "name": "JUST404IT",
+                    "description": home_description,
+                    "creator": {"@id": f"{SITE_URL}/#james-earl-cox-iii"},
+                },
+                {
+                    "@type": "Person",
+                    "@id": f"{SITE_URL}/#james-earl-cox-iii",
+                    "name": "James Earl Cox III",
+                    "url": f"{SITE_URL}/",
+                },
+            ],
+        },
+        ensure_ascii=False,
+    )
 
     return f"""<!doctype html>
 <html lang="en">
@@ -340,8 +458,17 @@ def build_index_html(entries: list[dict]) -> str:
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JUST404IT - James Earl Cox III</title>
-  <meta name="description" content="Games, films, writing, and experiments by James Earl Cox III, including the complete 100 Games in 5 Years archive.">
+  <meta name="description" content="{escape(home_description, quote=True)}">
   <meta name="theme-color" content="#0e0f0f">
+  <link rel="canonical" href="{SITE_URL}/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="JUST404IT - James Earl Cox III">
+  <meta property="og:description" content="{escape(home_description, quote=True)}">
+  <meta property="og:url" content="{SITE_URL}/">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">{home_schema}</script>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
   <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
@@ -388,9 +515,21 @@ def build_index_html(entries: list[dict]) -> str:
           <h2 id="archive-title">100 Games in 5 Years</h2>
           <p class="section-note">Every game is represented. Two project pages contain multi-game sets.</p>
         </div>
-        <p class="count" id="result-summary"><span id="visible-count">0</span> project pages</p>
+        <div class="archive-heading-side">
+          <p class="count" id="result-summary" role="status" aria-live="polite" aria-atomic="true"><span id="visible-count">0</span> project pages</p>
+          <a class="text-index-link" href="archive/">Complete text index</a>
+        </div>
       </div>
       <div class="archive-tools">
+        <div class="quick-routes" aria-label="Quick routes">
+          <span>Pick a door</span>
+          <button type="button" data-preset="play-now">Play something now</button>
+          <button type="button" data-preset="nonsense">Give me nonsense</button>
+          <button type="button" data-preset="serious">Get serious</button>
+          <button type="button" data-preset="off-screen">Go off-screen</button>
+          <button type="button" data-preset="made-fast">Made in a day</button>
+          <button type="button" data-preset="decorated">The decorated ones</button>
+        </div>
         <div class="archive-utility" role="search">
           <label class="control search-control" for="search"><span>Search</span><input id="search" type="search" placeholder="Title, credit, category, award"></label>
           <label class="control" for="sort"><span>Sort</span><select id="sort">
@@ -399,8 +538,11 @@ def build_index_html(entries: list[dict]) -> str:
             <option value="newest">Year: newest first</option>
             <option value="oldest">Year: oldest first</option>
             <option value="title">Title: A to Z</option>
+            <option value="fastest">Build time: fastest first</option>
+            <option value="longest">Build time: longest first</option>
           </select></label>
           <label class="control" for="year"><span>Year</span><select id="year"><option value="all">All years</option>{year_options}</select></label>
+          <button class="surprise-button" id="surprise-me" type="button">Surprise me</button>
           <button class="reset-button" id="reset-filters" type="button">Reset</button>
         </div>
         <div class="facet-groups" aria-label="Archive filters">
@@ -413,8 +555,21 @@ def build_index_html(entries: list[dict]) -> str:
           <fieldset class="facet-group"><legend>Context</legend><div>{context_buttons}</div></fieldset>
           <fieldset class="facet-group"><legend>Platform</legend><div>{platform_buttons}</div></fieldset>
         </div>
+        <details class="more-filters">
+          <summary>More ways in</summary>
+          <div class="facet-groups facet-groups-more">
+            <fieldset class="facet-group"><legend>Recognition</legend><div>{recognition_buttons}</div></fieldset>
+            <fieldset class="facet-group"><legend>Do something</legend><div>{access_buttons}</div></fieldset>
+            <fieldset class="facet-group"><legend>Build time</legend><div>{pace_buttons}</div></fieldset>
+          </div>
+        </details>
+        <div class="active-filters" id="active-filters" hidden>
+          <span>Active</span>
+          <div id="active-filter-list"></div>
+        </div>
       </div>
-      <div class="portfolio-grid" id="portfolio-grid" aria-live="polite"></div>
+      <div class="portfolio-grid" id="portfolio-grid"></div>
+      <noscript><p class="noscript-index">JavaScript is off. The <a href="archive/">complete text index</a> still has every project.</p></noscript>
     </section>
 
     <section class="band elsewhere" id="elsewhere" aria-labelledby="elsewhere-title">
@@ -441,20 +596,92 @@ def build_index_html(entries: list[dict]) -> str:
 """
 
 
-def build_archive_html(total: int) -> str:
+def build_archive_html(entries: list[dict]) -> str:
+    items = "\n".join(
+        f'<li><a href="../{escape(entry["detailPath"])}"><span>{escape(entry["seriesLabel"])}</span>'
+        f'<strong>{escape(entry["title"])}</strong><small>{escape(entry["year"] or "Archive")}</small></a></li>'
+        for entry in sorted(entries, key=lambda item: max(item.get("gameNumbers") or [0]), reverse=True)
+    )
+    represented_games = len({number for entry in entries for number in entry["gameNumbers"]})
+    archive_description = "A crawlable text index of James Earl Cox III's complete 100 Games in 5 Years archive."
+    schema = json.dumps(
+        {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "100 Games in 5 Years - Complete Index",
+            "url": f"{SITE_URL}/archive/",
+            "description": archive_description,
+            "mainEntity": {
+                "@type": "ItemList",
+                "numberOfItems": len(entries),
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": index,
+                        "name": entry["title"],
+                        "url": f'{SITE_URL}/{entry["detailPath"]}',
+                    }
+                    for index, entry in enumerate(entries, start=1)
+                ],
+            },
+        },
+        ensure_ascii=False,
+    )
     return f"""<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>JUST404IT Archive</title>
-  <meta http-equiv="refresh" content="0; url=../#archive">
-  <link rel="canonical" href="../#archive">
+  <title>100 Games in 5 Years - Complete Index · JUST404IT</title>
+  <meta name="description" content="{escape(archive_description, quote=True)}">
+  <meta name="theme-color" content="#0e0f0f">
+  <link rel="canonical" href="{SITE_URL}/archive/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="100 Games in 5 Years - Complete Index">
+  <meta property="og:description" content="{escape(archive_description, quote=True)}">
+  <meta property="og:url" content="{SITE_URL}/archive/">
+  <script type="application/ld+json">{schema}</script>
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/favicon.png">
+  <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
-  <p>{total} archive entries moved to <a href="../#archive">the JUST404IT archive</a>.</p>
+  <nav class="nav project-nav" aria-label="Primary">
+    <a class="mark" href="../"><span>JUST</span>404<span>IT</span></a>
+    <div class="nav-links"><a href="../#selected">Selected work</a><a href="../#archive">Visual archive</a></div>
+  </nav>
+  <main class="archive-index-page">
+    <a class="back-link" href="../#archive">← Filter the archive</a>
+    <header>
+      <p class="eyebrow">Complete text index</p>
+      <h1>100 Games in 5 Years</h1>
+      <p>{len(entries)} project pages representing all {represented_games} games.</p>
+    </header>
+    <ol class="archive-index-list">{items}</ol>
+  </main>
+  <footer class="footer"><a class="mark" href="../"><span>JUST</span>404<span>IT</span></a><p>James Earl Cox III · Complete index</p></footer>
 </body>
 </html>
+"""
+
+
+def build_sitemap(entries: list[dict]) -> str:
+    urls = [f"{SITE_URL}/", f"{SITE_URL}/archive/"] + [
+        f'{SITE_URL}/{entry["detailPath"]}' for entry in entries
+    ]
+    body = "\n".join(f"  <url><loc>{escape(url)}</loc></url>" for url in urls)
+    return f'''<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{body}
+</urlset>
+'''
+
+
+def build_robots() -> str:
+    return f"""User-agent: *
+Allow: /
+
+Sitemap: {SITE_URL}/sitemap.xml
 """
 
 
@@ -476,6 +703,7 @@ def category_tag(category: str) -> str:
 
 def build_game_html(entry: dict, newer: dict | None, earlier: dict | None) -> str:
     description = entry["description"] or "A project from the 100 Games in 5 Years archive."
+    meta_description = project_meta_description(entry, description)
     categories = "".join(
         category_tag(category) for category in entry["categories"] if not re.fullmatch(r"20\d{2}", category)
     )
@@ -511,6 +739,34 @@ def build_game_html(entry: dict, newer: dict | None, earlier: dict | None) -> st
         if earlier
         else "<span></span>"
     )
+    canonical_url = f'{SITE_URL}/{entry["detailPath"]}'
+    image_url = ""
+    if entry["image"]:
+        image_url = f'{SITE_URL}/{entry["image"]}'
+    elif entry["videoId"]:
+        image_url = f'https://i.ytimg.com/vi/{entry["videoId"]}/hqdefault.jpg'
+    schema_type = "VideoGame" if "digital" in entry["formats"] else "Game"
+    schema_data = {
+        "@context": "https://schema.org",
+        "@type": schema_type,
+        "name": entry["title"],
+        "url": canonical_url,
+        "description": meta_description,
+        "creator": {
+            "@type": "Person",
+            "name": "James Earl Cox III",
+            "url": f"{SITE_URL}/",
+        },
+    }
+    if entry["year"]:
+        schema_data["datePublished"] = entry["year"]
+    if entry["categories"]:
+        schema_data["genre"] = [
+            category for category in entry["categories"] if not re.fullmatch(r"20\d{2}", category)
+        ]
+    if image_url:
+        schema_data["image"] = image_url
+    schema = json.dumps(schema_data, ensure_ascii=False).replace("</", "<\\/")
 
     return f"""<!doctype html>
 <html lang="en">
@@ -518,8 +774,18 @@ def build_game_html(entry: dict, newer: dict | None, earlier: dict | None) -> st
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{escape(entry['title'])} · JUST404IT</title>
-  <meta name="description" content="{escape(description[:155], quote=True)}">
+  <meta name="description" content="{escape(meta_description, quote=True)}">
   <meta name="theme-color" content="#0e0f0f">
+  <link rel="canonical" href="{canonical_url}">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{escape(entry['title'], quote=True)}">
+  <meta property="og:description" content="{escape(meta_description, quote=True)}">
+  <meta property="og:url" content="{canonical_url}">
+  {f'<meta property="og:image" content="{escape(image_url, quote=True)}">' if image_url else ''}
+  <meta name="twitter:card" content="{'summary_large_image' if image_url else 'summary'}">
+  <script type="application/ld+json">{schema}</script>
+  <link rel="icon" type="image/png" href="../../assets/favicon.png">
+  <link rel="apple-touch-icon" href="../../assets/favicon.png">
   <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -550,7 +816,7 @@ def build_game_html(entry: dict, newer: dict | None, earlier: dict | None) -> st
         {f'<section><h2>Play and explore</h2><div class="project-links">{links}</div></section>' if links else ''}
         {f'<section><h2>Credits</h2><ul>{credits}</ul></section>' if credits else ''}
         {f'<section><h2>Recognition</h2><ul>{accolades}</ul></section>' if accolades else ''}
-        <section><h2>Archive record</h2><a class="text-link" href="{escape(entry['sourceUrl'], quote=True)}">View the legacy WordPress page</a></section>
+        <section><h2>Archive record</h2><p>Recovered from the public 100 Games in 5 Years site backup.</p></section>
       </aside>
     </section>
 
@@ -1156,10 +1422,30 @@ h3 { font-size: 1.25rem; line-height: 1.1; }
 
 .archive-band { background: #111312; }
 .archive-heading { align-items: flex-end; }
+.archive-heading-side { align-items: flex-end; display: grid; gap: 9px; justify-items: end; }
 .count { color: var(--muted); font-family: "Courier New", ui-monospace, monospace; margin: 0; }
 .count span { color: var(--ink); font-size: 1.4rem; font-weight: 800; }
+.text-index-link { border-bottom: 1px solid var(--line-strong); color: var(--mint); font-size: 0.82rem; padding-bottom: 3px; }
 .archive-tools { background: var(--surface); border: 1px solid var(--line); margin-bottom: 28px; }
-.archive-utility { align-items: end; border-bottom: 1px solid var(--line); display: grid; gap: 12px; grid-template-columns: minmax(280px, 1fr) 220px 150px auto; padding: 18px; }
+.quick-routes { align-items: center; border-bottom: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px; padding: 14px 18px; }
+.quick-routes > span, .active-filters > span {
+  color: var(--gold);
+  font-family: "Courier New", ui-monospace, monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin-right: 4px;
+  text-transform: uppercase;
+}
+.quick-routes button {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  cursor: pointer;
+  min-height: 34px;
+  padding: 6px 9px;
+}
+.quick-routes button:hover { border-color: var(--pink); color: var(--pink); }
+.archive-utility { align-items: end; border-bottom: 1px solid var(--line); display: grid; gap: 12px; grid-template-columns: minmax(250px, 1fr) 210px 140px auto auto; padding: 18px; }
 .control { display: grid; gap: 7px; }
 .control input, .control select {
   background: var(--bg);
@@ -1171,7 +1457,17 @@ h3 { font-size: 1.25rem; line-height: 1.1; }
   width: 100%;
 }
 .control input:focus, .control select:focus { border-color: var(--mint); }
-.reset-button { background: transparent; color: var(--muted); cursor: pointer; }
+.reset-button, .surprise-button { background: transparent; color: var(--muted); cursor: pointer; }
+.surprise-button {
+  background: var(--coral);
+  border: 1px solid var(--coral);
+  color: #170b07;
+  font-weight: 800;
+  min-height: 42px;
+  padding: 10px 14px;
+}
+.surprise-button:hover { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.surprise-button:disabled { background: transparent; border-color: var(--line); color: var(--quiet); cursor: not-allowed; }
 .facet-groups { display: grid; grid-template-columns: 1fr 1fr 2fr 1fr; }
 .facet-group { border: 0; border-right: 1px solid var(--line); margin: 0; min-width: 0; padding: 18px; }
 .facet-group:last-child { border-right: 0; }
@@ -1190,6 +1486,8 @@ h3 { font-size: 1.25rem; line-height: 1.1; }
 }
 .facet span { color: var(--quiet); font-family: "Courier New", ui-monospace, monospace; font-size: 0.72rem; }
 .facet:hover { border-color: var(--line-strong); color: var(--ink); }
+.facet:disabled { cursor: not-allowed; opacity: 0.34; }
+.facet:disabled:hover { border-color: var(--line); color: var(--muted); }
 .facet.is-active { background: var(--coral); border-color: var(--coral); color: #170b07; }
 .facet.is-active span { color: #522015; }
 .facet-playable:not(.is-active) { border-color: color-mix(in srgb, var(--mint) 55%, var(--line)); color: var(--mint); }
@@ -1204,6 +1502,32 @@ h3 { font-size: 1.25rem; line-height: 1.1; }
 .facet[data-group="formats"][data-value="analog"].is-active { background: var(--pink); border-color: var(--pink); color: #351326; }
 .facet[data-group="formats"][data-value="intermedia"].is-active { background: var(--violet); border-color: var(--violet); color: #1e163d; }
 .facet[data-group="formats"].is-active span { color: currentColor; }
+.more-filters { border-top: 1px solid var(--line); }
+.more-filters summary {
+  color: var(--mint);
+  cursor: pointer;
+  font-family: "Courier New", ui-monospace, monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  list-style-position: inside;
+  padding: 14px 18px;
+  text-transform: uppercase;
+}
+.more-filters[open] summary { border-bottom: 1px solid var(--line); }
+.facet-groups-more { grid-template-columns: 1fr 1.4fr 1.3fr; }
+.facet-groups-more .facet-group:last-child { border-right: 0; }
+.active-filters { align-items: center; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 9px; padding: 12px 18px; }
+.active-filters[hidden] { display: none; }
+.active-filters > div { display: flex; flex-wrap: wrap; gap: 7px; }
+.active-filter {
+  background: var(--bg);
+  border: 1px solid var(--line-strong);
+  color: var(--ink);
+  cursor: pointer;
+  min-height: 32px;
+  padding: 5px 8px;
+}
+.active-filter:hover { border-color: var(--mint); color: var(--mint); }
 
 .portfolio-grid { display: grid; gap: 16px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .portfolio-card { background: var(--surface); border: 1px solid var(--line); display: flex; flex-direction: column; min-height: 100%; }
@@ -1229,6 +1553,8 @@ h3 { font-size: 1.25rem; line-height: 1.1; }
 .card-links a { border-bottom: 1px solid var(--line-strong); color: var(--mint); font-size: 0.82rem; padding-bottom: 3px; }
 .card-links a.details-link { color: var(--ink); font-weight: 800; }
 .empty { border: 1px solid var(--line); color: var(--muted); grid-column: 1 / -1; padding: 40px; }
+.noscript-index { border: 1px solid var(--line); color: var(--muted); padding: 24px; }
+.noscript-index a { color: var(--mint); text-decoration: underline; }
 
 .elsewhere-grid { display: grid; gap: 0; grid-template-columns: repeat(3, 1fr); }
 .elsewhere-grid a { border: 1px solid var(--line); display: grid; gap: 10px; min-height: 170px; padding: 24px; }
@@ -1268,6 +1594,7 @@ h3 { font-size: 1.25rem; line-height: 1.1; }
 .project-aside section { border-top: 1px solid var(--line); padding-top: 18px; }
 .project-aside h2 { font-size: 1rem; margin-bottom: 14px; }
 .project-aside ul { color: var(--muted); line-height: 1.5; margin: 0; padding-left: 20px; }
+.project-aside p { color: var(--muted); line-height: 1.5; margin: 0; }
 .project-links { display: grid; gap: 8px; }
 .project-link { color: var(--mint); }
 .project-sequence { border-top: 1px solid var(--line); display: grid; gap: 28px; grid-template-columns: 1fr 1fr; margin-top: 80px; padding-top: 28px; }
@@ -1275,13 +1602,28 @@ h3 { font-size: 1.25rem; line-height: 1.1; }
 .project-sequence span { color: var(--quiet); display: block; font-family: "Courier New", ui-monospace, monospace; font-size: 0.72rem; margin-bottom: 7px; text-transform: uppercase; }
 .project-sequence strong { color: var(--mint); }
 
+.archive-index-page { margin: 0 auto; max-width: var(--max); padding: 58px 28px 90px; }
+.archive-index-page header { margin: 54px 0 42px; }
+.archive-index-page header h1 { font-size: 5.6rem; max-width: 12ch; }
+.archive-index-page header > p:last-child { color: var(--muted); font-size: 1.1rem; }
+.archive-index-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); list-style: none; margin: 0; padding: 0; }
+.archive-index-list li { border-top: 1px solid var(--line); }
+.archive-index-list li:nth-child(odd) { border-right: 1px solid var(--line); }
+.archive-index-list a { align-items: baseline; display: grid; gap: 12px; grid-template-columns: 130px minmax(0, 1fr) auto; min-height: 70px; padding: 16px 18px; }
+.archive-index-list a:hover { background: var(--surface); }
+.archive-index-list span, .archive-index-list small { color: var(--quiet); font-family: "Courier New", ui-monospace, monospace; font-size: 0.72rem; }
+.archive-index-list strong { line-height: 1.2; }
+
 @media (max-width: 1000px) {
   h1 { font-size: 6.5rem; }
   .feature-grid, .portfolio-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .archive-utility { grid-template-columns: 1fr 1fr; }
   .facet-groups { grid-template-columns: 1fr 1fr; }
+  .facet-groups-more { grid-template-columns: 1fr 1fr; }
   .facet-group:nth-child(2) { border-right: 0; }
   .facet-group:nth-child(-n + 2) { border-bottom: 1px solid var(--line); }
+  .facet-groups-more .facet-group:nth-child(2) { border-right: 0; }
+  .facet-groups-more .facet-group:last-child { border-right: 1px solid var(--line); }
   .project-heading h1 { font-size: 4.2rem; }
 }
 
@@ -1299,11 +1641,16 @@ h3 { font-size: 1.25rem; line-height: 1.1; }
   .hero-stats dd { font-size: 0.78rem; }
   .band { padding: 72px 20px; }
   .section-heading, .archive-heading, .footer { align-items: flex-start; flex-direction: column; }
+  .archive-heading-side { justify-items: start; }
   .feature-grid, .portfolio-grid, .elsewhere-grid, .project-hero, .project-content { grid-template-columns: 1fr; }
   .feature-media, .thumb { aspect-ratio: 16 / 9; }
   .archive-utility, .facet-groups { grid-template-columns: 1fr; }
   .facet-group, .facet-group:nth-child(2) { border-bottom: 1px solid var(--line); border-right: 0; }
   .facet-group:last-child { border-bottom: 0; }
+  .facet-groups-more .facet-group:last-child { border-right: 0; }
+  .quick-routes { align-items: stretch; }
+  .quick-routes > span { width: 100%; }
+  .quick-routes button { flex: 1 1 calc(50% - 8px); }
   .elsewhere-grid a + a { border-left: 1px solid var(--line); border-top: 0; }
   .project-page { padding: 40px 20px 70px; }
   .project-hero { gap: 28px; }
@@ -1314,6 +1661,12 @@ h3 { font-size: 1.25rem; line-height: 1.1; }
   .project-content { gap: 46px; margin-top: 58px; }
   .project-sequence { grid-template-columns: 1fr; }
   .project-sequence > a:last-child { text-align: left; }
+  .archive-index-page { padding: 40px 20px 70px; }
+  .archive-index-page header h1 { font-size: 3.3rem; }
+  .archive-index-list { grid-template-columns: 1fr; }
+  .archive-index-list li:nth-child(odd) { border-right: 0; }
+  .archive-index-list a { grid-template-columns: 96px minmax(0, 1fr); }
+  .archive-index-list small { grid-column: 2; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1331,13 +1684,23 @@ const summary = document.querySelector("#result-summary");
 const sort = document.querySelector("#sort");
 const year = document.querySelector("#year");
 const reset = document.querySelector("#reset-filters");
+const surprise = document.querySelector("#surprise-me");
+const activeFilters = document.querySelector("#active-filters");
+const activeFilterList = document.querySelector("#active-filter-list");
 const facets = [...document.querySelectorAll(".facet")];
+const routes = [...document.querySelectorAll("[data-preset]")];
+const moreFilters = document.querySelector(".more-filters");
+const multiGroups = ["formats", "contexts", "platforms", "recognition", "access", "pace"];
+let visibleEntries = [];
 
 const state = {
   status: "all",
   formats: new Set(),
   contexts: new Set(),
   platforms: new Set(),
+  recognition: new Set(),
+  access: new Set(),
+  pace: new Set(),
 };
 
 function clean(value) {
@@ -1362,12 +1725,15 @@ function intersects(values, selected) {
   return selected.size === 0 || (values || []).some((value) => selected.has(value));
 }
 
-function matches(entry) {
-  if (state.status === "playable" && !entry.playable) return false;
-  if (state.status === "recognized" && !entry.hasAccolade) return false;
-  if (!intersects(entry.formats, state.formats)) return false;
-  if (!intersects(entry.contexts, state.contexts)) return false;
-  if (!intersects(entry.platforms, state.platforms)) return false;
+function matches(entry, ignoreGroup = "") {
+  if (ignoreGroup !== "status" && state.status === "playable" && !entry.playable) return false;
+  if (ignoreGroup !== "status" && state.status === "recognized" && !entry.hasAccolade) return false;
+  if (ignoreGroup !== "formats" && !intersects(entry.formats, state.formats)) return false;
+  if (ignoreGroup !== "contexts" && !intersects(entry.contexts, state.contexts)) return false;
+  if (ignoreGroup !== "platforms" && !intersects(entry.platforms, state.platforms)) return false;
+  if (ignoreGroup !== "recognition" && !intersects(entry.recognition, state.recognition)) return false;
+  if (ignoreGroup !== "access" && !intersects(entry.access, state.access)) return false;
+  if (ignoreGroup !== "pace" && state.pace.size && !state.pace.has(entry.developmentPace)) return false;
   if (year.value !== "all" && entry.year !== year.value) return false;
 
   const query = clean(search.value).trim().toLowerCase();
@@ -1380,6 +1746,7 @@ function matches(entry) {
     ...(entry.details || []),
     ...(entry.credits || []),
     ...(entry.accolades || []),
+    entry.developmentTime,
   ].join(" ").toLowerCase();
   return haystack.includes(query);
 }
@@ -1397,6 +1764,15 @@ function sortEntries(list) {
     if (mode === "newest") return clean(b.year).localeCompare(clean(a.year)) || seriesValue(b, 0) - seriesValue(a, 0);
     if (mode === "oldest") return clean(a.year).localeCompare(clean(b.year)) || seriesValue(a, 999) - seriesValue(b, 999);
     if (mode === "title") return a.title.localeCompare(b.title);
+    if (mode === "fastest" || mode === "longest") {
+      const aKnown = Number.isFinite(a.developmentDays);
+      const bKnown = Number.isFinite(b.developmentDays);
+      if (aKnown !== bKnown) return aKnown ? -1 : 1;
+      if (aKnown && a.developmentDays !== b.developmentDays) {
+        return mode === "fastest" ? a.developmentDays - b.developmentDays : b.developmentDays - a.developmentDays;
+      }
+      return seriesValue(b, 0) - seriesValue(a, 0);
+    }
     return seriesValue(b, 0) - seriesValue(a, 0) || a.title.localeCompare(b.title);
   });
   return sorted;
@@ -1446,7 +1822,47 @@ function updateFacetState() {
     const active = group === "status" ? state.status === value : state[group].has(value);
     facet.classList.toggle("is-active", active);
     facet.setAttribute("aria-pressed", String(active));
+    const count = entries.filter((entry) => {
+      if (!matches(entry, group)) return false;
+      if (group === "status") {
+        if (value === "all") return true;
+        if (value === "playable") return entry.playable;
+        return entry.hasAccolade;
+      }
+      if (group === "pace") return entry.developmentPace === value;
+      return (entry[group] || []).includes(value);
+    }).length;
+    const countNode = facet.querySelector("span");
+    if (countNode) countNode.textContent = count;
+    facet.disabled = count === 0 && !active;
   });
+}
+
+function facetLabel(facet) {
+  return [...facet.childNodes].find((node) => node.nodeType === Node.TEXT_NODE)?.textContent.trim() || facet.dataset.value;
+}
+
+function activeChip(label, group, value = "") {
+  return `<button class="active-filter" type="button" data-remove-group="${html(group)}" data-remove-value="${html(value)}" aria-label="Remove ${html(label)} filter">${html(label)} ×</button>`;
+}
+
+function updateActiveFilters() {
+  const chips = [];
+  if (state.status !== "all") {
+    const facet = facets.find((item) => item.dataset.group === "status" && item.dataset.value === state.status);
+    chips.push(activeChip(facetLabel(facet), "status", state.status));
+  }
+  multiGroups.forEach((group) => {
+    state[group].forEach((value) => {
+      const facet = facets.find((item) => item.dataset.group === group && item.dataset.value === value);
+      chips.push(activeChip(facetLabel(facet), group, value));
+    });
+  });
+  if (year.value !== "all") chips.push(activeChip(year.value, "year", year.value));
+  const query = clean(search.value).trim();
+  if (query) chips.push(activeChip(`Search: ${query}`, "search"));
+  activeFilterList.innerHTML = chips.join("");
+  activeFilters.hidden = chips.length === 0;
 }
 
 function syncUrl() {
@@ -1454,7 +1870,7 @@ function syncUrl() {
   const query = clean(search.value).trim();
   if (query) params.set("q", query);
   if (state.status !== "all") params.set("status", state.status);
-  ["formats", "contexts", "platforms"].forEach((group) => {
+  multiGroups.forEach((group) => {
     if (state[group].size) params.set(group, [...state[group]].join(","));
   });
   if (year.value !== "all") params.set("year", year.value);
@@ -1464,13 +1880,15 @@ function syncUrl() {
 }
 
 function render() {
-  const visible = sortEntries(entries.filter(matches));
-  const representedGames = new Set(visible.flatMap((entry) => entry.gameNumbers || [])).size;
-  const projectWord = visible.length === 1 ? "project page" : "project pages";
+  visibleEntries = sortEntries(entries.filter((entry) => matches(entry)));
+  const representedGames = new Set(visibleEntries.flatMap((entry) => entry.gameNumbers || [])).size;
+  const projectWord = visibleEntries.length === 1 ? "project page" : "project pages";
   const gameWord = representedGames === 1 ? "game" : "games";
-  summary.innerHTML = `<span>${visible.length}</span> ${projectWord} · ${representedGames} ${gameWord} represented`;
-  grid.innerHTML = visible.length ? visible.map(renderCard).join("") : `<p class="empty">No project pages match this combination.</p>`;
+  summary.innerHTML = `<span>${visibleEntries.length}</span> ${projectWord} · ${representedGames} ${gameWord} represented`;
+  grid.innerHTML = visibleEntries.length ? visibleEntries.map(renderCard).join("") : `<p class="empty">Nothing lives at this exact intersection. Yet.</p>`;
+  surprise.disabled = visibleEntries.length === 0;
   updateFacetState();
+  updateActiveFilters();
   syncUrl();
 }
 
@@ -1478,11 +1896,21 @@ function loadUrlState() {
   const params = new URLSearchParams(location.search);
   search.value = params.get("q") || "";
   state.status = ["all", "playable", "recognized"].includes(params.get("status")) ? params.get("status") : "all";
-  ["formats", "contexts", "platforms"].forEach((group) => {
-    clean(params.get(group)).split(",").filter(Boolean).forEach((value) => state[group].add(value));
+  multiGroups.forEach((group) => {
+    const allowed = new Set(facets.filter((item) => item.dataset.group === group).map((item) => item.dataset.value));
+    clean(params.get(group)).split(",").filter((value) => allowed.has(value)).forEach((value) => state[group].add(value));
   });
   if ([...year.options].some((option) => option.value === params.get("year"))) year.value = params.get("year");
   if ([...sort.options].some((option) => option.value === params.get("sort"))) sort.value = params.get("sort");
+  if (moreFilters && ["recognition", "access", "pace"].some((group) => state[group].size)) moreFilters.open = true;
+}
+
+function clearFilters(resetSort = true) {
+  search.value = "";
+  if (resetSort) sort.value = "series-desc";
+  year.value = "all";
+  state.status = "all";
+  multiGroups.forEach((group) => state[group].clear());
 }
 
 facets.forEach((facet) => {
@@ -1500,14 +1928,47 @@ search.addEventListener("input", render);
 sort.addEventListener("change", render);
 year.addEventListener("change", render);
 reset.addEventListener("click", () => {
-  search.value = "";
-  sort.value = "series-desc";
-  year.value = "all";
-  state.status = "all";
-  state.formats.clear();
-  state.contexts.clear();
-  state.platforms.clear();
+  clearFilters();
   render();
+});
+
+routes.forEach((route) => {
+  route.addEventListener("click", () => {
+    clearFilters();
+    const preset = route.dataset.preset;
+    if (preset === "play-now") {
+      state.status = "playable";
+      state.access.add("online");
+    } else if (preset === "nonsense") state.contexts.add("silly");
+    else if (preset === "serious") state.contexts.add("serious");
+    else if (preset === "off-screen") {
+      state.formats.add("analog");
+      state.formats.add("intermedia");
+    } else if (preset === "made-fast") state.pace.add("day-or-less");
+    else if (preset === "decorated") state.recognition.add("award-winning");
+    if (moreFilters && ["made-fast", "decorated"].includes(preset)) moreFilters.open = true;
+    render();
+  });
+});
+
+activeFilterList.addEventListener("click", (event) => {
+  const chip = event.target.closest("[data-remove-group]");
+  if (!chip) return;
+  const group = chip.dataset.removeGroup;
+  const value = chip.dataset.removeValue;
+  if (group === "status") state.status = "all";
+  else if (group === "year") year.value = "all";
+  else if (group === "search") search.value = "";
+  else if (state[group]) state[group].delete(value);
+  render();
+});
+
+surprise.addEventListener("click", () => {
+  if (!visibleEntries.length) return;
+  const random = new Uint32Array(1);
+  crypto.getRandomValues(random);
+  const entry = visibleEntries[random[0] % visibleEntries.length];
+  location.href = entry.detailPath;
 });
 
 loadUrlState();
@@ -1529,7 +1990,8 @@ This is the new static site for `just404it.com`, generated from the public safet
 - `data/portfolio.json` and `data/portfolio.js` - {len(entries)} public project pages representing {represented_games} games.
 - `games/` - locally generated detail pages for every public project entry.
 - `assets/portfolio/` - {with_images} copied portfolio images from the backup.
-- `archive/index.html` - compatibility entry point for archive links.
+- `archive/index.html` - crawlable text index of all public project pages.
+- `sitemap.xml` and `robots.txt` - generated discovery files for search engines.
 - `DESIGN_SYSTEM.md` - the color, label, filtering, and sorting rules.
 
 ## What Is Not Here
@@ -1538,15 +2000,11 @@ The complete public-site backup is intentionally kept outside this public reposi
 
 The private James Archive is a research map, not publication content. See `PUBLICATION_BOUNDARY.md` before adding archive-derived material.
 
-## Recommended Free Hosting Path
+## Hosting State
 
-Use Cloudflare Pages as the production host and GitHub as the source repo.
+GitHub is the source repo and GitHub Pages is the current free construction preview.
 
-1. Create a GitHub repo for this folder.
-2. Connect that repo to Cloudflare Pages.
-3. Set `just404it.com` as the primary custom domain.
-4. Add `www.just404it.com`, `justdeleteit.com`, and `www.justdeleteit.com` only after the preview is approved.
-5. Decide whether `justdeleteit.com` redirects to `just404it.com/#archive` or remains a preserved archive domain.
+The generator defaults canonical URLs and the sitemap to the preview URL. At domain cutover, set `JUST404IT_SITE_URL` to the approved production origin before rebuilding.
 
 No DNS, registrar, hosting, or WordPress changes have been made by this generator.
 
@@ -1554,6 +2012,7 @@ No DNS, registrar, hosting, or WordPress changes have been made by this generato
 
 ```powershell
 $env:JUSTDELETEIT_BACKUP_ROOT = 'C:\\path\\to\\the\\extracted-backup'
+$env:JUST404IT_SITE_URL = 'https://just404it.github.io/just404it-site'
 py -3.12 tools\\build_static_site.py
 ```
 
@@ -1572,6 +2031,7 @@ def build_404_html() -> str:
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>404 - JUST404IT</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
@@ -1593,14 +2053,19 @@ def main() -> None:
     entries = build_portfolio_data()
     write_portfolio_data(entries)
     write_text(SITE_ROOT / "index.html", build_index_html(entries))
-    write_text(SITE_ROOT / "archive" / "index.html", build_archive_html(len(entries)))
+    write_text(SITE_ROOT / "archive" / "index.html", build_archive_html(entries))
     for index, entry in enumerate(entries):
         newer = entries[index - 1] if index > 0 else None
         earlier = entries[index + 1] if index + 1 < len(entries) else None
         write_text(SITE_ROOT / entry["detailPath"] / "index.html", build_game_html(entry, newer, earlier))
     write_text(SITE_ROOT / "404.html", build_404_html())
+    write_text(SITE_ROOT / "sitemap.xml", build_sitemap(entries))
+    write_text(SITE_ROOT / "robots.txt", build_robots())
     write_text(SITE_ROOT / "assets" / "site.css", build_css())
     write_text(SITE_ROOT / "assets" / "site.js", build_js())
+    favicon_source = MIRROR_ROOT / "wp-content" / "uploads" / "2016" / "03" / "114.png"
+    if favicon_source.is_file():
+        shutil.copy2(favicon_source, SITE_ROOT / "assets" / "favicon.png")
     write_text(SITE_ROOT / "README.md", build_readme(entries))
     print(f"Generated {len(entries)} portfolio entries in {SITE_ROOT}")
 
