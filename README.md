@@ -1,14 +1,16 @@
 # JUST404IT Static Site
 
-This is the new static starter site for `just404it.com`, generated from the public safety backup of `justdeleteit.com`.
+This is the new static site for `just404it.com`, generated from the public safety backup of `justdeleteit.com`.
 
 ## What Is Here
 
-- `index.html` - the new hub plus searchable archive.
+- `index.html` - the hub plus searchable, sortable, faceted archive.
 - `assets/site.css` and `assets/site.js` - the editable front-end.
-- `data/portfolio.json` and `data/portfolio.js` - 91 recovered portfolio entries.
+- `data/portfolio.json` and `data/portfolio.js` - 91 public project pages representing 100 games.
+- `games/` - locally generated detail pages for every public project entry.
 - `assets/portfolio/` - 22 copied portfolio images from the backup.
 - `archive/index.html` - compatibility entry point for archive links.
+- `DESIGN_SYSTEM.md` - the color, label, filtering, and sorting rules.
 
 ## What Is Not Here
 
@@ -33,4 +35,10 @@ No DNS, registrar, hosting, or WordPress changes have been made by this generato
 ```powershell
 $env:JUSTDELETEIT_BACKUP_ROOT = 'C:\path\to\the\extracted-backup'
 py -3.12 tools\build_static_site.py
+```
+
+## Validate Before Publishing
+
+```powershell
+py -3.12 tools\validate_site.py
 ```
