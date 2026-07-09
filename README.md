@@ -6,6 +6,7 @@ This is the new static site for `just404it.com`, generated from the public safet
 
 - `index.html` - the hub plus searchable, sortable, faceted archive.
 - `assets/site.css` and `assets/site.js` - the editable front-end.
+- `assets/brand/` - updated vector wordmark, square icon, and social sharing card derived from the original 2019 logo.
 - `data/portfolio.json` and `data/portfolio.js` - 91 public project pages representing 100 games.
 - `games/` - locally generated detail pages for every public project entry.
 - `assets/portfolio/` - 22 copied portfolio images from the backup.

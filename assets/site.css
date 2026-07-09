@@ -47,13 +47,12 @@ img { display: block; max-width: 100%; }
 }
 
 .mark {
-  font-family: "Courier New", ui-monospace, monospace;
-  font-size: 1.5rem;
-  font-weight: 900;
-  white-space: nowrap;
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: 174px;
 }
-.mark span:first-child { color: var(--coral); }
-.mark span:last-child { color: var(--pink); }
+.mark img { height: auto; width: 100%; }
+.footer .mark { width: 150px; }
 .nav-links { display: flex; flex-wrap: wrap; gap: 8px; }
 .nav-links a, .button, .reset-button, .project-link {
   border: 1px solid var(--line);
@@ -322,6 +321,7 @@ h3 { font-size: 1.25rem; line-height: 1.1; }
 
 @media (max-width: 700px) {
   .nav { align-items: flex-start; flex-direction: column; gap: 13px; padding: 16px 20px; position: relative; }
+  .nav .mark { width: 158px; }
   .nav-links { width: 100%; }
   .nav-links a { flex: 1; text-align: center; }
   .hero { min-height: 560px; padding: 70px 20px 56px; }

@@ -465,16 +465,20 @@ def build_index_html(entries: list[dict]) -> str:
   <meta property="og:title" content="JUST404IT - James Earl Cox III">
   <meta property="og:description" content="{escape(home_description, quote=True)}">
   <meta property="og:url" content="{SITE_URL}/">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="{SITE_URL}/assets/brand/just404it-social-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{home_schema}</script>
+  <link rel="icon" type="image/svg+xml" href="assets/brand/just404it-icon.svg">
   <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/brand/just404it-icon-512.png">
   <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
   <header class="site-head">
     <nav class="nav" aria-label="Primary">
-      <a class="mark" href="./"><span>JUST</span>404<span>IT</span></a>
+      <a class="mark" href="./" aria-label="JUST404IT home"><img src="assets/brand/just404it-wordmark.svg" alt="JUST404IT"></a>
       <div class="nav-links">
         <a href="#selected">Selected work</a>
         <a href="#archive">100 Games</a>
@@ -586,7 +590,7 @@ def build_index_html(entries: list[dict]) -> str:
   </main>
 
   <footer class="footer">
-    <a class="mark" href="./"><span>JUST</span>404<span>IT</span></a>
+    <a class="mark" href="./" aria-label="JUST404IT home"><img src="assets/brand/just404it-wordmark.svg" alt="JUST404IT"></a>
     <p>James Earl Cox III · Games and other evidence</p>
   </footer>
   <script src="data/portfolio.js"></script>
@@ -640,14 +644,17 @@ def build_archive_html(entries: list[dict]) -> str:
   <meta property="og:title" content="100 Games in 5 Years - Complete Index">
   <meta property="og:description" content="{escape(archive_description, quote=True)}">
   <meta property="og:url" content="{SITE_URL}/archive/">
+  <meta property="og:image" content="{SITE_URL}/assets/brand/just404it-social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{schema}</script>
+  <link rel="icon" type="image/svg+xml" href="../assets/brand/just404it-icon.svg">
   <link rel="icon" type="image/png" href="../assets/favicon.png">
-  <link rel="apple-touch-icon" href="../assets/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/brand/just404it-icon-512.png">
   <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
   <nav class="nav project-nav" aria-label="Primary">
-    <a class="mark" href="../"><span>JUST</span>404<span>IT</span></a>
+    <a class="mark" href="../" aria-label="JUST404IT home"><img src="../assets/brand/just404it-wordmark.svg" alt="JUST404IT"></a>
     <div class="nav-links"><a href="../#selected">Selected work</a><a href="../#archive">Visual archive</a></div>
   </nav>
   <main class="archive-index-page">
@@ -659,7 +666,7 @@ def build_archive_html(entries: list[dict]) -> str:
     </header>
     <ol class="archive-index-list">{items}</ol>
   </main>
-  <footer class="footer"><a class="mark" href="../"><span>JUST</span>404<span>IT</span></a><p>James Earl Cox III · Complete index</p></footer>
+  <footer class="footer"><a class="mark" href="../" aria-label="JUST404IT home"><img src="../assets/brand/just404it-wordmark.svg" alt="JUST404IT"></a><p>James Earl Cox III · Complete index</p></footer>
 </body>
 </html>
 """
@@ -740,11 +747,12 @@ def build_game_html(entry: dict, newer: dict | None, earlier: dict | None) -> st
         else "<span></span>"
     )
     canonical_url = f'{SITE_URL}/{entry["detailPath"]}'
-    image_url = ""
+    project_image_url = ""
     if entry["image"]:
-        image_url = f'{SITE_URL}/{entry["image"]}'
+        project_image_url = f'{SITE_URL}/{entry["image"]}'
     elif entry["videoId"]:
-        image_url = f'https://i.ytimg.com/vi/{entry["videoId"]}/hqdefault.jpg'
+        project_image_url = f'https://i.ytimg.com/vi/{entry["videoId"]}/hqdefault.jpg'
+    social_image_url = project_image_url or f"{SITE_URL}/assets/brand/just404it-social-card.png"
     schema_type = "VideoGame" if "digital" in entry["formats"] else "Game"
     schema_data = {
         "@context": "https://schema.org",
@@ -764,8 +772,8 @@ def build_game_html(entry: dict, newer: dict | None, earlier: dict | None) -> st
         schema_data["genre"] = [
             category for category in entry["categories"] if not re.fullmatch(r"20\d{2}", category)
         ]
-    if image_url:
-        schema_data["image"] = image_url
+    if project_image_url:
+        schema_data["image"] = project_image_url
     schema = json.dumps(schema_data, ensure_ascii=False).replace("</", "<\\/")
 
     return f"""<!doctype html>
@@ -781,16 +789,17 @@ def build_game_html(entry: dict, newer: dict | None, earlier: dict | None) -> st
   <meta property="og:title" content="{escape(entry['title'], quote=True)}">
   <meta property="og:description" content="{escape(meta_description, quote=True)}">
   <meta property="og:url" content="{canonical_url}">
-  {f'<meta property="og:image" content="{escape(image_url, quote=True)}">' if image_url else ''}
-  <meta name="twitter:card" content="{'summary_large_image' if image_url else 'summary'}">
+  <meta property="og:image" content="{escape(social_image_url, quote=True)}">
+  <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{schema}</script>
+  <link rel="icon" type="image/svg+xml" href="../../assets/brand/just404it-icon.svg">
   <link rel="icon" type="image/png" href="../../assets/favicon.png">
-  <link rel="apple-touch-icon" href="../../assets/favicon.png">
+  <link rel="apple-touch-icon" href="../../assets/brand/just404it-icon-512.png">
   <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
   <nav class="nav project-nav" aria-label="Primary">
-    <a class="mark" href="../../"><span>JUST</span>404<span>IT</span></a>
+    <a class="mark" href="../../" aria-label="JUST404IT home"><img src="../../assets/brand/just404it-wordmark.svg" alt="JUST404IT"></a>
     <div class="nav-links"><a href="../../#selected">Selected work</a><a href="../../#archive">100 Games</a></div>
   </nav>
   <main class="project-page">
@@ -822,7 +831,7 @@ def build_game_html(entry: dict, newer: dict | None, earlier: dict | None) -> st
 
     <nav class="project-sequence" aria-label="100 Games sequence">{newer_link}{earlier_link}</nav>
   </main>
-  <footer class="footer"><a class="mark" href="../../"><span>JUST</span>404<span>IT</span></a><p>James Earl Cox III · {escape(entry['seriesLabel'])}</p></footer>
+  <footer class="footer"><a class="mark" href="../../" aria-label="JUST404IT home"><img src="../../assets/brand/just404it-wordmark.svg" alt="JUST404IT"></a><p>James Earl Cox III · {escape(entry['seriesLabel'])}</p></footer>
 </body>
 </html>
 """
@@ -1354,13 +1363,12 @@ img { display: block; max-width: 100%; }
 }
 
 .mark {
-  font-family: "Courier New", ui-monospace, monospace;
-  font-size: 1.5rem;
-  font-weight: 900;
-  white-space: nowrap;
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: 174px;
 }
-.mark span:first-child { color: var(--coral); }
-.mark span:last-child { color: var(--pink); }
+.mark img { height: auto; width: 100%; }
+.footer .mark { width: 150px; }
 .nav-links { display: flex; flex-wrap: wrap; gap: 8px; }
 .nav-links a, .button, .reset-button, .project-link {
   border: 1px solid var(--line);
@@ -1629,6 +1637,7 @@ h3 { font-size: 1.25rem; line-height: 1.1; }
 
 @media (max-width: 700px) {
   .nav { align-items: flex-start; flex-direction: column; gap: 13px; padding: 16px 20px; position: relative; }
+  .nav .mark { width: 158px; }
   .nav-links { width: 100%; }
   .nav-links a { flex: 1; text-align: center; }
   .hero { min-height: 560px; padding: 70px 20px 56px; }
@@ -1987,6 +1996,7 @@ This is the new static site for `just404it.com`, generated from the public safet
 
 - `index.html` - the hub plus searchable, sortable, faceted archive.
 - `assets/site.css` and `assets/site.js` - the editable front-end.
+- `assets/brand/` - updated vector wordmark, square icon, and social sharing card derived from the original 2019 logo.
 - `data/portfolio.json` and `data/portfolio.js` - {len(entries)} public project pages representing {represented_games} games.
 - `games/` - locally generated detail pages for every public project entry.
 - `assets/portfolio/` - {with_images} copied portfolio images from the backup.
@@ -2031,7 +2041,9 @@ def build_404_html() -> str:
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>404 - JUST404IT</title>
+  <link rel="icon" type="image/svg+xml" href="assets/brand/just404it-icon.svg">
   <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/brand/just404it-icon-512.png">
   <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
@@ -2063,7 +2075,7 @@ def main() -> None:
     write_text(SITE_ROOT / "robots.txt", build_robots())
     write_text(SITE_ROOT / "assets" / "site.css", build_css())
     write_text(SITE_ROOT / "assets" / "site.js", build_js())
-    favicon_source = MIRROR_ROOT / "wp-content" / "uploads" / "2016" / "03" / "114.png"
+    favicon_source = SITE_ROOT / "assets" / "brand" / "just404it-icon-512.png"
     if favicon_source.is_file():
         shutil.copy2(favicon_source, SITE_ROOT / "assets" / "favicon.png")
     write_text(SITE_ROOT / "README.md", build_readme(entries))

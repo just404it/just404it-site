@@ -28,6 +28,18 @@ Project cards use a colored top rule for their primary format. Hover and focus m
 
 Semantic filters keep their assigned color when selected: playable fills mint, recognized fills gold, and format filters fill blue, pink, or violet. Neutral context and platform filters use coral only while selected.
 
+## Brand Mark
+
+The navigation wordmark and square browser-face icon preserve the exact geometry of the 2019 `Just 404-03` vector. The update removes the old purple gradient and assigns the existing site colors deliberately:
+
+- `JUST` and `IT` use the warm white text color.
+- The first `4` uses command coral.
+- The browser-face `0` uses digital blue.
+- The second `4` uses analog pink.
+- The tongue repeats coral as the only small character accent.
+
+The large homepage title remains live text for clarity and responsiveness. The full vector wordmark is reserved for navigation, footers, favicons, and social previews, where the browser-face icon adds recognition without competing with the work.
+
 ## Label Taxonomy
 
 The old site placed unrelated labels in one category list. The rebuild separates them:

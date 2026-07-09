@@ -14,6 +14,13 @@ PRIVATE_MARKERS = (
     "Dropbox\\James_Archive",
     "just404it@gmail.com",
 )
+BRAND_FILES = (
+    "assets/brand/just404it-wordmark.svg",
+    "assets/brand/just404it-icon.svg",
+    "assets/brand/just404it-icon-512.png",
+    "assets/brand/just404it-social-card.png",
+    "assets/favicon.png",
+)
 
 
 def check_public_data() -> tuple[int, int]:
@@ -75,6 +82,15 @@ def check_private_markers() -> None:
                 raise SystemExit(f"Private marker in public file: {path} ({marker})")
 
 
+def check_brand_assets() -> None:
+    for relative in BRAND_FILES:
+        path = SITE_ROOT / relative
+        if not path.is_file() or path.stat().st_size == 0:
+            raise SystemExit(f"Missing brand asset: {relative}")
+        if path.suffix == ".svg":
+            ElementTree.fromstring(path.read_text(encoding="utf-8"))
+
+
 def check_search_artifacts(entries: int) -> tuple[int, int]:
     sitemap = SITE_ROOT / "sitemap.xml"
     robots = SITE_ROOT / "robots.txt"
@@ -124,6 +140,7 @@ def main() -> None:
     entries, games = check_public_data()
     pages, references = check_local_references()
     check_private_markers()
+    check_brand_assets()
     sitemap_urls, structured = check_search_artifacts(entries)
     print(
         f"Validated {entries} project pages representing {games} games; {pages} HTML files, "
