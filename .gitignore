@@ -1,0 +1,7 @@
+.source-backup/
+qa/
+__pycache__/
+*.py[cod]
+*.zip
+.DS_Store
+Thumbs.db
