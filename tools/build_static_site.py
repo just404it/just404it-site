@@ -826,6 +826,8 @@ This is the new static starter site for `just404it.com`, generated from the publ
 
 The complete public-site backup is intentionally kept outside this public repository as a checksummed private archive.
 
+The private James Archive is a research map, not publication content. See `PUBLICATION_BOUNDARY.md` before adding archive-derived material.
+
 ## Recommended Free Hosting Path
 
 Use Cloudflare Pages as the production host and GitHub as the source repo.
